@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cancel">取消</string>
+    <string name="version">版本</string>
+    <string name="version_unknown">未知版本</string>
+    <string name="details">詳細</string>
+    <string name="disable">停用</string>
+    <string name="search">搜索</string>
+    <string name="update_log">更新日誌</string>
+    <string name="desc">介紹</string>
+    <string name="err_patch">無法找到修補的文件！</string>
+    <string name="err_init">初始化失敗</string>
+    <string name="about_slogan">你的每一縷星光，都是寫給世界的溫柔詩篇</string>
+    <string name="about_repo_desc">跳轉到TEFModLoader的開源倉庫</string>
+    <string name="about_contribution_jiangnight">為項目的 Compose UI 奠定了重要基礎
+        \nTerraria圖標設計
+    </string>
+    <string name="about_contribution_qwq3094">早期的部分UI改進</string>
+    <string name="about_contribution_aaa1115910">指導文件如何才能以TR Save Editor方式打開</string>
+    <string name="exit_again">再按一次退出應用程式</string>
+    <string name="follow_system">跟隨系統</string>
+    <string name="confirm_delete">您確定要刪除</string>
+    <string name="launch_mode_root">Root(危險)</string>
+    <string name="temp_cancel_and_clear_the_configuration">取消並清除配置</string>
+    <string name="temp_running_content">如果您需要修補遊戲請點擊此卡片添加修補</string>
+    <string name="theme_default">默認</string>
+    <string name="theme_ocean">滄海明月</string>
+    <string name="theme_autumn">朱雀烈陽</string>
+    <string name="theme_green">翠竹幽林</string>
+    <string name="theme_yellow">金秋稻香</string>
+    <string name="theme_pink">桃花春水</string>
+    <string name="theme_purple">紫氣東來</string>
+    <string name="unlimited">無限制</string>
+    <string name="next">下一步</string>
+    <string name="patch_game">修補遊戲</string>
+    <string name="launch_game">啟動遊戲</string>
+    <string name="loading">少女祈禱中…</string>
+    <string name="loader_install">安裝Loader</string>
+    <string name="install_error">安裝失敗</string>
+    <string name="loader_header_error">非標準Loader文件頭</string>
+    <string name="back">返回</string>
+    <string name="exit">退出</string>
+    <string name="setting_theme">主題</string>
+    <string name="setting_launch_mode">啟動模式</string>
+    <string name="setting_dark_mode">深色模式</string>
+    <string name="setting_language">語言</string>
+    <string name="setting_architecture">架構</string>
+    <string name="setting_log_cache">日誌文件最大大小</string>
+    <string name="loader_support_android">Android平台支援</string>
+    <string name="loader_delete">刪除加載器</string>
+    <string name="mod_header_error">非標準Mod檔頭</string>
+    <string name="installing">安裝中…</string>
+    <string name="dark_mode_disable">总是关闭</string>
+    <string name="title_welcome">歡迎使用TEFModLoader</string>
+    <string name="title_home">主頁</string>
+    <string name="title_help">幫助</string>
+    <string name="title_settings">設置</string>
+    <string name="title_manager_loader">Loader管理</string>
+    <string name="title_about">關於</string>
+    <string name="title_terminal">終端</string>
+    <string name="title_manager_mod">Mod管理</string>
+    <string name="dark_mode_enable">总是启用</string>
+    <string name="title_license">開源許可</string>
+    <string name="title_thanks">特别鸣谢</string>
+    <string name="setting_title_general">常規</string>
+    <string name="setting_title_advanced">高級</string>
+    <string name="about_repo_title">開源代碼</string>
+    <string name="more">更多</string>
+    <string name="mode">模式</string>
+    <string name="close">退出</string>
+    <string name="about_feedback_desc">反饋bug/提出建議</string>
+    <string name="about_development">開發</string>
+    <string name="about_contributor">重要貢獻</string>
+    <string name="about_contribution_eternalfuture">別看捏，我什麼都沒做qwq(bushi</string>
+    <string name="about_contribution_morenrx">早期提供純淨包
+        \n某些頁面的靈感及功能
+        \n早期項目優化
+    </string>
+    <string name="agreement_user_desc">歡迎使用我們的應用程序（以下簡稱“本應用”）。請在使用前仔細閱讀以下用戶協議（以下簡稱“本協議”），本協議詳細說明了您在使用本應用時的權利與義務。
+        \n
+        \n## 一、信息收集
+        \n
+        \n為了優化您的使用體驗，本應用僅會收集必要的信息以識別被激活的應用程序列表。我們承諾不會收集用戶的個人信息，包括但不限於姓名、聯繫方式、位置信息等。
+        \n
+        \n## 二、文件管理權限
+        \n
+        \n本應用可能需要請求訪問設備上的文件管理權限，以便於管理遊戲或其他應用程序的Mod文件。此權限僅用於TEFModLoader默認功能，且該功能不會對您的手機造成威脅。
+        \n
+        \n### 風險提示
+        \n
+        \n- **第三方Mod**：本應用允許用戶安裝第三方Mod，但請注意，這些Mod可能未經驗證，存在安全風險。使用任何未授權或不受信任的第三方Mod可能導致數據丟失、隱私洩露或其他安全問題。
+        \n- **第三方插件頁面**：通過本應用訪問的第三方插件頁面可能存在安全隱患。建議用戶避免從不可信來源下載內容。
+        \n- **第三方Loader**：除本應用外，其他第三方提供的Loader也可能存在風險，請謹慎選擇並使用。
+        \n
+        \n## 三、免責條款
+        \n
+        \n- **絕對責任限制**：使用本應用即表示您完全理解並同意，因使用本應用或其相關服務所造成的任何後果均由您自行承擔。這包括但不限於數據丟失、設備損壞、利潤損失、法律糾紛等。無論何種原因導致的損害，本應用的製作者均不承擔任何責任。
+        \n- **Root權限**：本應用可能會根據用戶需求申請設備的root權限。請注意，獲取和使用root權限存在較高風險，可能導致設備安全性降低、系統不穩定等問題。請慎重考慮是否授予此類權限。
+        \n- **第三方內容**：本應用不對第三方Mod、插件或通過本應用訪問的其他第三方內容負責。用戶應自行承擔使用這些內容的風險。
+        \n
+        \n## 四、開源地址
+        \n
+        \n本應用是開源項目，源代碼託管於 GitHub： [https://github.com/2079541547/TEFModLoader](https://github.com/2079541547/TEFModLoader)。您可以訪問該地址查看項目的源代碼、提出問題或貢獻代碼。
+        \n
+        \n## 五、遵守法規
+        \n
+        \n使用本應用即表示您同意遵守所有適用的國際法、國家法律法規以及地方法規的規定。
+        \n
+        \n## 六、協議變更
+        \n
+        \n我們保留在任何時候修改本協議的權利。任何更新後的協議將在本頁面發布，並自發布之日起生效。
+    </string>
+    <string name="agreement_loader_title">EFModLoader使用協議</string>
+    <string name="agreement_loader_consent">我已閱讀並同意以上EFModLoader使用協議。</string>
+    <string name="update_error">更新失敗</string>
+    <string name="help_package_install_desc">請確保簽名與管理器是完全一致的</string>
+    <string name="agreement_user_title">用戶協議</string>
+    <string name="agreement_user_consent">我已閱讀並同意以上用戶協議。</string>
+    <string name="agreement_loader_desc">## 1. 使用目的
+        \n
+        \n- **EFModLoader** 是一個旨在為遊戲添加擴展功能的工具。雖然其工作原理與某些外掛類似，但作者堅決反對任何遊戲作弊行為。作者完全支持社會主義，支持中國共產黨的領導，確保本工具的使用符合社會主義核心價值觀的要求。
+        \n- 本工具僅供學習和研究使用，與現實中任何真實事件無關，請用戶不要代入或聯想。EFModLoader 中出現的所有功能、效果均為虛構，與現實中的任何個體、團體或事件無任何關聯。
+        \n
+        \n## 2. 禁止作弊
+        \n
+        \n- 請勿使用本工具進行任何形式的遊戲作弊行為。任何違反遊戲規則的行為都是不道德的，可能導致您的帳號被封禁。作者堅決反對一切破壞遊戲公平性的行為，維護健康的遊戲環境。
+        \n- 使用本工具進行作弊或其他不道德行為的用戶，將自行承擔所有法律責任。作者不對因用戶不當使用本工具而產生的任何後果負責。
+        \n
+        \n## 3. 遊戲環境
+        \n
+        \n- 請勿使用本工具破壞遊戲平衡或干擾其他玩家的正常遊戲體驗。尊重其他玩家，共同維護良好的遊戲環境。作者倡導公平、公正的遊戲環境，反對一切破壞遊戲平衡的行為。
+        \n- 用戶在使用本工具時，應遵守遊戲平台的相關規則和法律法規，確保使用本工具的行為合法合規。
+        \n
+        \n## 4. 內容性質說明
+        \n
+        \n- 本工具僅供學習和研究使用，與現實中任何真實事件無關，請用戶不要代入或聯想。EFModLoader 中出現的所有功能、效果均為虛構，與現實中的任何個體、團體或事件無任何關聯。
+        \n- 本工具中的所有內容均為創意虛構，與任何現實中的事件、人物或組織無任何關聯。用戶不應將本工具中的任何內容與現實生活中的事件或人物進行對比或聯想。
+        \n- 用戶在使用本工具時，需自行承擔所有法律責任。作者不對因用戶不當使用本工具而產生的任何後果負責。用戶應遵守當地法律法規，確保使用本工具的行為合法合規。
+        \n
+        \n## 5. 法律責任
+        \n
+        \n- 使用本工具的用戶需自行承擔所有法律責任。作者不對因不當使用本工具而產生的任何後果負責。用戶應遵守當地法律法規，確保使用本工具的行為合法合規。
+        \n- 任何用戶在使用本工具時，必須遵守相關法律法規。作者不對用戶因不當使用本工具而產生的任何法律責任負責。用戶應自行判斷並承擔所有法律責任。
+        \n- 作者保留對本工具的所有內容進行審查的權利，確保所有內容符合法律法規和社會道德標準。任何違反法律法規或社會道德的內容將被立即刪除。
+        \n
+        \n## 6. 用戶行為規範
+        \n
+        \n- 用戶在使用本工具時，必須遵守以下行為規範：
+        \n- 不得用於任何非法或不道德的目的。
+        \n- 不得用於破壞遊戲平衡或干擾其他玩家的正常遊戲體驗。
+        \n- 不得用於任何可能引起社會不安或爭議的行為。
+        \n- 不得用於任何侵犯他人隱私或權益的行為。
+        \n- 違反上述行為規範的用戶，將自行承擔所有法律責任。
+        \n- 任何不遵守本協議的使用行為均不屬於EFModLoader的範圍，作者對此類行為不承擔任何責任。
+        \n
+        \n## 7. 最終解釋權
+        \n
+        \n- 作者保留對本協議和聲明的最終解釋權。如有任何爭議，作者將依據相關法律法規進行處理。
+        \n- **作者保留隨時修改本協議的權利，無需事先通知用戶。** 修改後的協議將在作者的官方網站和GitHub頁面上公佈，用戶應定期查看以了解最新版本。一旦繼續使用本工具，即表示接受更新後的協議條款。
+    </string>
+    <string name="about_license_desc">使用的開源項目</string>
+    <string name="about_thanks_title">特別鳴謝</string>
+    <string name="about_thanks_desc">為此項目作出貢獻的人</string>
+    <string name="about_donate_desc">衷心感謝所有支持者的慷慨捐贈</string>
+    <string name="about_license_title">開源許可</string>
+    <string name="about_feedback_title">反饋</string>
+    <string name="about_donate_title">捐贈名單</string>
+    <string name="guide_auto_patch_desc">如果你安裝了遊戲且不會操作就勾選，注意不支援加密包！</string>
+    <string name="loader_support">加載器支持</string>
+    <string name="loader_support_windows">Windows平台支援</string>
+    <string name="confirm">確定</string>
+    <string name="updating">更新中…</string>
+    <string name="mod_delete">刪除Mod</string>
+    <string name="back_home">返回首頁</string>
+    <string name="about_contribution_yuwu">參與軟體早期重寫，優化設定頁面
+        \nLogo設計
+        \n英語翻譯</string>
+    <string name="help_package_invalid_title">修補的遊戲安裝包無效？</string>
+    <string name="help_package_invalid_desc">如果出現這種情況請使用MT管理器查看是否簽名以及APK是否正常</string>
+    <string name="help_package_install_title">修補的遊戲安裝包無法安裝？</string>
+    <string name="setting_override_desc">將版本代碼改為1可降級安裝</string>
+    <string name="guide_enable_tip">推薦啟用</string>
+    <string name="guide_default_loader_desc">首次使用不建議關閉</string>
+    <string name="guide_auto_patch">自動修補已安裝的遊戲包</string>
+    <string name="guide_default_loader">安裝預設加載器</string>
+    <string name="launch_mode_external">外部模式</string>
+    <string name="launch_mode_share">共享模式</string>
+    <string name="launch_mode_inline">嵌入模式</string>
+    <string name="setting_debug_desc">允許包被調試</string>
+    <string name="setting_override">覆寫版本代碼</string>
+    <string name="setting_custom_apk">選擇自定義安裝包</string>
+    <string name="setting_bypass_desc">使用SilkRift嘗試繞過安裝包中的某些檢測</string>
+    <string name="setting_debug">調試</string>
+    <string name="setting_custom_apk_desc">選擇後將不會自動使用已安裝的遊戲包否則使用已安裝的遊戲包</string>
+    <string name="setting_bypass">繞過檢測</string>
+    <string name="export">匯出</string>
+    <string name="export_file">匯出檔案</string>
+    <string name="patching">修補中…</string>
+    <string name="update_log_100000_title">💐 0.10.0 - 新起點</string>
+    <string name="update_log_100000_desc">1. 重寫底層 + UI</string>
+    <string name="update_log_100400_title">TODO</string>
+    <string name="update_log_100400_desc">0.10.4</string>
+    <string name="temp_patched">已存在修補方案</string>
+    <string name="temp_patched_content">是否使用已存在的方案進行修補？</string>
+    <string name="temp_export_the_file_content">已存在修補檔案，是否匯出？</string>
+    <string name="temp_cancel_and_delete_the_file">取消並刪除檔案</string>
+    <string name="temp_launch_the_menu">啟動選單</string>
+    <string name="temp_running">運行中</string>
+
+
+</resources>
