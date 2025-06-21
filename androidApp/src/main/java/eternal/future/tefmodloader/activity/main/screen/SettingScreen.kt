@@ -24,8 +24,8 @@ import eternal.future.tefmodloader.manager.I18N
 import eternal.future.tefmodloader.R
 import eternal.future.tefmodloader.activity.main.navigation.BackMode
 import eternal.future.tefmodloader.activity.main.navigation.NavigationViewModel
-import eternal.future.tefmodloader.config.AppPrefs
-import eternal.future.tefmodloader.config.AppState
+import eternal.future.tefmodloader.config.AppPrefsOld
+import eternal.future.tefmodloader.manager.OptionManager
 import eternal.future.tefmodloader.manager.ThemeManager
 import eternal.future.tefmodloader.widget.AppTopBar
 import eternal.future.tefmodloader.widget.main.SettingScreen.ActionButton
@@ -99,7 +99,7 @@ object SettingScreen {
                     App.exit()
                 })
                 AppTopBar(
-                    title = I18N.text(R.string.exit),
+                    title = I18N.text(R.string.title_settings),
                     showMenu = true,
                     menuItems = menuItems,
                     showBackButton = true,
@@ -116,25 +116,24 @@ object SettingScreen {
                 item {
 
                     val advancedList = listOf(
-                        I18N.string(R.string.follow_system),
+                        I18N.text(R.string.follow_system),
                         "arm64",
                         "arm32",
                         "x64",
                         "x86"
                     )
 
-                    Text(I18N.string(R.string.setting_title_advanced), modifier = Modifier.padding(4.dp))
+                    Text(I18N.text(R.string.setting_title_advanced), modifier = Modifier.padding(4.dp))
 
                     Selector(
                         title = I18N.text(R.string.setting_architecture),
-                        defaultSelectorId = AppState.architecture.value,
+                        defaultSelectorId = AppPrefsOld.architecture,
                         selectorList = advancedList,
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(4.dp),
                         onClick = {
-                            configuration.setInt("architecture", it)
-                            State.architecture.value = it
+                            AppPrefsOld.architecture = it
                         }
                     )
 
@@ -142,8 +141,8 @@ object SettingScreen {
 
                     ActionButton(
                         icon = Icons.Default.Save,
-                        title = setting.getString("export_logs"),
-                        description = setting.getString("export_logs_content"),
+                        title = I18N.text(R.string.temp_export_logs),
+                        description = I18N.text(R.string.temp_export_logs_content),
                         onClick = {
                             val formatter = SimpleDateFormat("yyyy-MM-dd_HH-mm-ss", Locale.getDefault())
                             val fileName = "runtime-jvm-${formatter.format(Date())}.log"
@@ -154,42 +153,42 @@ object SettingScreen {
                 }
 
                 item {
-                    Text(I18N.string(R.string.setting_title_general), modifier = Modifier
+                    Text(I18N.text(R.string.setting_title_general), modifier = Modifier
                         .fillMaxWidth()
                         .padding(4.dp))
 
                     Selector(
                         title = I18N.text(R.string.setting_language),
-                        defaultSelectorId = AppPrefs.language,
-                        I18N.optionsLanguage.map { I18N.string(it) },
+                        defaultSelectorId = AppPrefsOld.language,
+                        I18N.texts(OptionManager.optionsLanguage),
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(4.dp),
                         onClick = {
-                            AppPrefs.language = it
+                            AppPrefsOld.language = it
                             I18N.setLocale(I18N.allLanguages.get(it).second)
                             mainViewModel.refreshCurrentScreen()
                         }
                     )
 
-                    SelectorWithIcon(
+                    Selector(
                         title = I18N.text(R.string.setting_theme),
-                        defaultSelectorId = AppPrefs.theme,
-                        ThemeManager.optionsTheme.map { I18N.string(it.first) to it.second },
+                        defaultSelectorId = AppPrefsOld.theme,
+                        I18N.texts(OptionManager.optionsTheme),
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(4.dp),
-                        onClick = { AppPrefs.theme = it }
+                        onClick = { AppPrefsOld.theme = it }
                     )
 
                     Selector(
                         title = I18N.text(R.string.setting_dark_mode),
-                        defaultSelectorId = AppPrefs.darkMode,
-                        ThemeManager.optionsDarkMode.map { I18N.string(it) },
+                        defaultSelectorId = AppPrefsOld.darkMode,
+                        I18N.texts(OptionManager.optionsDarkMode),
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(4.dp),
-                        onClick = { AppPrefs.darkMode = it }
+                        onClick = { AppPrefsOld.darkMode = it }
                     )
                 }
             }

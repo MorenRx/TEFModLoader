@@ -1,9 +1,11 @@
 package eternal.future.tefmodloader.utils
 
+import android.graphics.BitmapFactory
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.asImageBitmap
 import eternal.future.tefmodloader.config.AppConf
-import eternal.future.tefmodloader.config.AppState
+import eternal.future.tefmodloader.config.AppPrefsOld
 import eternal.future.tefmodloader.data.EFMod
 import eternal.future.tefmodloader.data.Github
 import eternal.future.tefmodloader.data.Info
@@ -11,6 +13,7 @@ import eternal.future.tefmodloader.data.Introduction
 import eternal.future.tefmodloader.data.LoaderSupport
 import eternal.future.tefmodloader.data.PlatformSupport
 import eternal.future.tefmodloader.data.Platforms
+import eternal.future.tefmodloader.manager.I18N
 import net.peanuuutz.tomlkt.Toml
 import net.peanuuutz.tomlkt.asTomlTable
 import net.peanuuutz.tomlkt.getArray
@@ -134,7 +137,7 @@ object EFMod {
         val loadersMap = mutableStateListOf<Loader>()
         val initializeMap = mutableMapOf<Loader, MutableList<String>>()
 
-        var architecture = when (AppState.architecture.value) {
+        var architecture = when (AppPrefsOld.architecture) {
             1 -> "arm64-v8a"
             2 -> "armeabi-v7a"
             3 -> "x64"
@@ -230,7 +233,7 @@ object EFMod {
 
                         if (Icon.isNotEmpty()) {
 
-                            ModIcon = Icon.decodeToImageBitmap()
+                            ModIcon = BitmapFactory.decodeByteArray(Icon, 0, Icon.size).asImageBitmap()
                         }
                     }
 
@@ -285,7 +288,7 @@ object EFMod {
                         loaders = loaderSupportList,
                         introduce = Introduction(
                             description = toml.getTable("introduce")
-                                .getString(Locales.getLanguage(AppState.language.value))
+                                .getString(I18N.getCurrentLocale())
                         ),
                         path = modDir.absolutePath,
                         icon = ModIcon,

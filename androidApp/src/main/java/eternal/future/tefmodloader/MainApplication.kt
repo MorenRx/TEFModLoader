@@ -3,30 +3,26 @@ package eternal.future.tefmodloader
 import android.annotation.SuppressLint
 import android.app.Application
 import eternal.future.tefmodloader.config.AppConf
-import eternal.future.tefmodloader.utils.App
 import eternal.future.tefmodloader.config.AppPrefs
+import eternal.future.tefmodloader.config.AppPrefsOld
 import eternal.future.tefmodloader.manager.I18N
-import eternal.future.tefmodloader.utils.Zip
-import java.io.File
+import eternal.future.tefmodloader.utils.Apk
 
 class MainApplication: Application() {
 
-    @SuppressLint("UnsafeDynamicallyLoadedCode")
     override fun onCreate() {
         super.onCreate()
         AppConf.init(this)
+
+        //不太完善准备替换掉
+        AppPrefsOld.init(this)
+
         AppPrefs.init(this)
         I18N.init(this)
 
-        File(filesDir, "SilkCasket").let {
-            if (!it.exists()) {
-                val zipPath = Zip.copyZipFromResources("SilkCasket.zip", "${it.parent}")
-                Zip.unzipSpecificFilesIgnorePath(zipPath, it.path,  "android/${App.getCurrentArchitecture()}/libsilkcasket.so")
-                File(zipPath).delete()
-            }
-            System.load(it.path)
-            print("已加载")
-        }
-    }
+        //临时添加
+        Apk.init(this)
 
+        System.loadLibrary("silkcasket")
+    }
 }

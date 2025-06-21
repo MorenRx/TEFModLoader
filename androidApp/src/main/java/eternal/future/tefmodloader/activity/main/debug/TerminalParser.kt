@@ -2,7 +2,6 @@ package eternal.future.tefmodloader.activity.main.debug
 
 import eternal.future.tefmodloader.config.AppConf
 import eternal.future.tefmodloader.utils.Apk
-import eternal.future.tefmodloader.config.AppPrefs
 import eternal.future.tefmodloader.utils.EFMod
 import eternal.future.tefmodloader.utils.EFModLoader
 import eternal.future.tefmodloader.utils.FileUtils

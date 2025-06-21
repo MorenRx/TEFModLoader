@@ -2,6 +2,7 @@ package eternal.future.tefmodloader.config
 
 import android.content.Context
 import android.util.Log
+import androidx.compose.runtime.mutableIntStateOf
 import eternal.future.tefmodloader.utils.App
 import java.io.File
 
@@ -20,6 +21,7 @@ object AppConf {
     const val SP_KEY_FIRST_LAUNCH = "is_first_launch"
     const val SP_KEY_EXTERNAL_MODE = "is_external_mode"
     const val SP_KEY_LOG_CACHE_MAXIMUM = "log_cache_maximum"
+    const val SP_KEY_ARCHITECTURE = "architecture"
 
 
     val SilkCasket_Temp by lazy { File(appContext.filesDir, "SilkCasket_Temp").path }

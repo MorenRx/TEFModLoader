@@ -89,11 +89,12 @@ object EFModScreen {
         }
 
         if (showUpdate) {
+            val errModHeader = I18N.text(R.string.mod_header_error)
             LaunchedEffect(key1 = showUpdate) {
                 val r = eternal.future.tefmodloader.utils.EFMod.update(tempFile.path, mod.path)
                 mods.value = eternal.future.tefmodloader.utils.EFMod.loadModsFromDirectory(AppConf.PATH_EFMOD)
                 if (!r.first) {
-                    errorMsg = if (r.second != "error") r.second else I18N.string(R.string.loader_header_error)
+                    errorMsg = if (r.second != "error") r.second else errModHeader
                     showError = true
                 }
                 showUpdate = false
@@ -126,7 +127,7 @@ object EFModScreen {
         if (showUpdate) {
             AlertDialog(
                 onDismissRequest = { },
-                title = { I18N.text(R.string.updating) },
+                title = { Text(I18N.text(R.string.updating)) },
                 text = {
                     Column {
                         Text("${I18N.text(R.string.loading)} ${mod.info.name}?")
@@ -140,7 +141,7 @@ object EFModScreen {
         if (showError) {
             AlertDialog(
                 onDismissRequest = { showError = false },
-                title = { I18N.text(R.string.update_error) },
+                title = { Text(I18N.text(R.string.err_update)) },
                 text = {
                     LazyColumn {
                         item {
@@ -270,7 +271,7 @@ object EFModScreen {
             if (showDeleteDialog) {
                 AlertDialog(
                     onDismissRequest = { showDeleteDialog = false },
-                    title = { I18N.text(R.string.mod_delete) },
+                    title = { Text(I18N.text(R.string.mod_delete)) },
                     text = { Text("${I18N.text(R.string.confirm_delete)} ${mod.info.name}?") },
                     confirmButton = {
                         TextButton(onClick = {
@@ -325,7 +326,7 @@ object EFModScreen {
 
                             var isLoaderExpanded by remember { mutableStateOf(false) }
                             ExpandableSection(
-                                title = I18N.string(R.string.loader_support),
+                                title = I18N.text(R.string.loader_support),
                                 expanded = isLoaderExpanded,
                                 onExpandChange = { isLoaderExpanded = it }) {
                                 SupportLoader(mod.loaders)
@@ -333,7 +334,7 @@ object EFModScreen {
 
                             var isWindowsExpanded by remember { mutableStateOf(false) }
                             ExpandableSection(
-                                title = I18N.string(R.string.loader_support_windows),
+                                title = I18N.text(R.string.loader_support_windows),
                                 expanded = isWindowsExpanded,
                                 onExpandChange = { isWindowsExpanded = it }) {
                                 PlatformSupport(mod.platform.windows)
@@ -341,7 +342,7 @@ object EFModScreen {
 
                             var isAndroidExpanded by remember { mutableStateOf(false) }
                             ExpandableSection(
-                                title = I18N.string(R.string.loader_support_android),
+                                title = I18N.text(R.string.loader_support_android),
                                 expanded = isAndroidExpanded,
                                 onExpandChange = { isAndroidExpanded = it }) {
                                 PlatformSupport(mod.platform.android)

@@ -1,17 +1,12 @@
 package eternal.future.tefmodloader.manager.themes
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import eternal.future.tefmodloader.R
 
 object Purple: ThemeData() {
     override val nameId: Int = R.string.theme_purple
-
-    override val icon: ImageVector = Icons.Default.Star
 
     override val lightScheme = lightColorScheme(
         primary = Color(0xFF5F5790),

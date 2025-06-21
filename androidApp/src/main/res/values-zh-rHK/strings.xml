@@ -23,6 +23,8 @@
     <string name="launch_mode_root">Root(危險)</string>
     <string name="temp_cancel_and_clear_the_configuration">取消並清除配置</string>
     <string name="temp_running_content">如果您需要修補遊戲請點擊此卡片添加修補</string>
+    <string name="temp_export_logs">導出日誌</string>
+    <string name="temp_export_logs_content">導出運行日誌供發現問題</string>
     <string name="theme_default">默認</string>
     <string name="theme_ocean">滄海明月</string>
     <string name="theme_autumn">朱雀烈陽</string>
@@ -36,7 +38,7 @@
     <string name="launch_game">啟動遊戲</string>
     <string name="loading">少女祈禱中…</string>
     <string name="loader_install">安裝Loader</string>
-    <string name="install_error">安裝失敗</string>
+    <string name="err_install">安裝失敗</string>
     <string name="loader_header_error">非標準Loader文件頭</string>
     <string name="back">返回</string>
     <string name="exit">退出</string>
@@ -48,6 +50,7 @@
     <string name="setting_log_cache">日誌文件最大大小</string>
     <string name="loader_support_android">Android平台支援</string>
     <string name="loader_delete">刪除加載器</string>
+    <string name="mod_install">安裝Mod</string>
     <string name="mod_header_error">非標準Mod檔頭</string>
     <string name="installing">安裝中…</string>
     <string name="dark_mode_disable">总是关闭</string>
@@ -112,7 +115,7 @@
     </string>
     <string name="agreement_loader_title">EFModLoader使用協議</string>
     <string name="agreement_loader_consent">我已閱讀並同意以上EFModLoader使用協議。</string>
-    <string name="update_error">更新失敗</string>
+    <string name="err_update">更新失敗</string>
     <string name="help_package_install_desc">請確保簽名與管理器是完全一致的</string>
     <string name="agreement_user_title">用戶協議</string>
     <string name="agreement_user_consent">我已閱讀並同意以上用戶協議。</string>
@@ -168,6 +171,7 @@
     <string name="guide_auto_patch_desc">如果你安裝了遊戲且不會操作就勾選，注意不支援加密包！</string>
     <string name="loader_support">加載器支持</string>
     <string name="loader_support_windows">Windows平台支援</string>
+    <string name="auto">自動</string>
     <string name="confirm">確定</string>
     <string name="updating">更新中…</string>
     <string name="mod_delete">刪除Mod</string>
@@ -198,14 +202,13 @@
     <string name="patching">修補中…</string>
     <string name="update_log_100000_title">💐 0.10.0 - 新起點</string>
     <string name="update_log_100000_desc">1. 重寫底層 + UI</string>
-    <string name="update_log_100400_title">TODO</string>
-    <string name="update_log_100400_desc">0.10.4</string>
+    <string name="update_log_100400_title">0.10.4</string>
+    <string name="update_log_100400_desc">TODO</string>
     <string name="temp_patched">已存在修補方案</string>
     <string name="temp_patched_content">是否使用已存在的方案進行修補？</string>
     <string name="temp_export_the_file_content">已存在修補檔案，是否匯出？</string>
     <string name="temp_cancel_and_delete_the_file">取消並刪除檔案</string>
     <string name="temp_launch_the_menu">啟動選單</string>
     <string name="temp_running">運行中</string>
-
 
 </resources>

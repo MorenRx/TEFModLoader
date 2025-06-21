@@ -66,14 +66,16 @@ object EFModScreen {
         }
 
         if (showInstall) {
+            val err = I18N.text(R.string.mod_header_error)
             LaunchedEffect(key1 = showInstall) {
                 val r = eternal.future.tefmodloader.utils.EFMod.install(
                     tempFile.path,
                     File(AppConf.PATH_EFMOD, UUID.randomUUID().toString()).path
                 )
+
                 tempFile.delete()
                 if (!r.first) {
-                    errorMsg = if (r.second != "error") r.second else I18N.string(R.string.loader_header_error)
+                    errorMsg = if (r.second != "error") r.second else err
                     showError = true
                 }
                 mods.value = eternal.future.tefmodloader.utils.EFMod.loadModsFromDirectory(AppConf.PATH_EFMOD)
@@ -88,7 +90,7 @@ object EFModScreen {
         if (showInstall) {
             AlertDialog(
                 onDismissRequest = { },
-                title = { I18N.text(R.string.installing) },
+                title = { Text(I18N.text(R.string.installing)) },
                 text = {
                     Column {
                         I18N.text(R.string.loading)
@@ -103,7 +105,7 @@ object EFModScreen {
         if (showError) {
             AlertDialog(
                 onDismissRequest = { showError = false },
-                title = { I18N.text(R.string.install_error) },
+                title = { Text(I18N.text(R.string.err_install)) },
                 text = {
                     LazyColumn {
                         item {
@@ -144,7 +146,7 @@ object EFModScreen {
                 var offsetY by remember { mutableStateOf(0f) }
 
                 ExtendedFloatingActionButton(
-                    text = { I18N.text(R.string.loader_install) },
+                    text = { Text(I18N.text(R.string.mod_install)) },
                     icon = { Icon(Icons.Default.InstallDesktop, contentDescription = "Install EFMod") },
                     containerColor = MaterialTheme.colorScheme.primary,
                     onClick = onBack,

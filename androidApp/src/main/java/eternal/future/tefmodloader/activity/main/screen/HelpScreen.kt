@@ -84,7 +84,7 @@ object HelpScreen {
                     TextField(
                         value = searchQuery,
                         onValueChange = { searchQuery = it },
-                        placeholder = { I18N.text(R.string.search) },
+                        placeholder = { Text(I18N.text(R.string.search)) },
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(16.dp)
@@ -135,7 +135,7 @@ object HelpScreen {
                                 modifier = Modifier.fillMaxWidth()
                             ) {
                                 Text(
-                                    text = "${index+1}: ${I18N.string(item.first)}",
+                                    text = "${index+1}: ${I18N.text(item.first)}",
                                     style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
                                     modifier = Modifier.weight(1f)
                                 )
@@ -155,7 +155,7 @@ object HelpScreen {
                             }
                             if (isExpanded || searchQuery.isNotEmpty() && filteredItems.indexOf(item) < filteredItems.size) {
                                 Spacer(modifier = Modifier.height(8.dp))
-                                Text(text = I18N.string(item.second), style = MaterialTheme.typography.bodyMedium)
+                                Text(text = I18N.text(item.second), style = MaterialTheme.typography.bodyMedium)
                             }
                         }
                     }

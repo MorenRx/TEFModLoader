@@ -21,9 +21,9 @@ import eternal.future.tefmodloader.widget.AboutScreen.projectInfoCard
 object ThanksScreen {
 
     val thanks = listOf(
-        "雨鹜" to I18N.string(R.string.about_contribution_yuwu),
-        "QwQ3094" to I18N.string(R.string.about_contribution_qwq3094),
-        "aaa1115910" to I18N.string(R.string.about_contribution_aaa1115910),
+        "雨鹜" to R.string.about_contribution_yuwu,
+        "QwQ3094" to R.string.about_contribution_qwq3094,
+        "aaa1115910" to R.string.about_contribution_aaa1115910,
 
     )
 
@@ -61,7 +61,7 @@ object ThanksScreen {
                         projectInfoCard(
                             modifier = Modifier.padding(10.dp),
                             titleText = it.first,
-                            descriptionText = it.second,
+                            descriptionText = I18N.text(it.second),
                             additionalInfoText = "",
                             onClick = { }
                         )

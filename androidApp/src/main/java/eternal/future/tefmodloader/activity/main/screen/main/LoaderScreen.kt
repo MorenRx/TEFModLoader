@@ -99,11 +99,12 @@ object LoaderScreen {
         }
 
         if (showInstall) {
+            val errInstall = I18N.text(R.string.err_install)
             LaunchedEffect(key1 = showInstall) {
                 val r = eternal.future.tefmodloader.utils.EFModLoader.install(tempFile.path, File(AppConf.PATH_EFMOD_LOADER, UUID.randomUUID().toString()).path)
                 tempFile.delete()
                 if (!r.first) {
-                    errorMsg = (if (r.second != "error") r.second else I18N.string(R.string.install_error))
+                    errorMsg = (if (r.second != "error") r.second else errInstall)
                     showError = true
                 }
                 loaders.value = eternal.future.tefmodloader.utils.EFModLoader.loadLoadersFromDirectory(AppConf.PATH_EFMOD_LOADER)
@@ -118,7 +119,7 @@ object LoaderScreen {
         if (showInstall) {
             AlertDialog(
                 onDismissRequest = {  },
-                title = { I18N.text(R.string.installing) },
+                title = { Text(I18N.text(R.string.installing)) },
                 text = {
                     Column {
                         I18N.text(R.string.loading)
@@ -133,7 +134,7 @@ object LoaderScreen {
         if (showError) {
             AlertDialog(
                 onDismissRequest = { showError = false },
-                title = { I18N.text(R.string.install_error) },
+                title = { Text(I18N.text(R.string.err_install)) },
                 text = {
                     LazyColumn {
                         item {
@@ -174,7 +175,7 @@ object LoaderScreen {
                 var offsetY by remember { mutableStateOf(0f) }
 
                 ExtendedFloatingActionButton(
-                    text = { I18N.text(R.string.loader_install) },
+                    text = { Text(I18N.text(R.string.loader_install)) },
                     icon = { Icon(Icons.Default.InstallDesktop, contentDescription = "Install Loader") },
                     containerColor = MaterialTheme.colorScheme.primary,
                     onClick = installOnBack,
@@ -322,7 +323,7 @@ object LoaderScreen {
             if (showDeleteDialog) {
                 AlertDialog(
                     onDismissRequest = { showDeleteDialog = false },
-                    title = { I18N.text(R.string.loader_delete) },
+                    title = { Text(I18N.text(R.string.loader_delete)) },
                     text = { Text("${I18N.text(R.string.confirm_delete)} ${loader.info.name}?") },
                     confirmButton = {
                         TextButton(onClick = {
@@ -364,10 +365,11 @@ object LoaderScreen {
         }
 
         if (showUpdate) {
+            val errLoaderHeader = I18N.text(R.string.loader_header_error)
             LaunchedEffect(key1 = showUpdate) {
                 val r = eternal.future.tefmodloader.utils.EFModLoader.update(tempFile.path, loader.path)
                 if (!r.first) {
-                    errorMsg = if (r.second != "error") r.second else I18N.string(R.string.loader_header_error)
+                    errorMsg = if (r.second != "error") r.second else errLoaderHeader
                     showError = true
                 }
                 loaders.value = eternal.future.tefmodloader.utils.EFModLoader.loadLoadersFromDirectory(AppConf.PATH_EFMOD_LOADER)
@@ -383,7 +385,7 @@ object LoaderScreen {
         if (showUpdate) {
             AlertDialog(
                 onDismissRequest = {  },
-                title = { I18N.text(R.string.updating) },
+                title = { Text(I18N.text(R.string.updating)) },
                 text = {
                     Column {
                         Text("${I18N.text(R.string.loading)} ${loader.info.name}?")
@@ -398,7 +400,7 @@ object LoaderScreen {
         if (showError) {
             AlertDialog(
                 onDismissRequest = { showError = false },
-                title = { I18N.text(R.string.update_error) },
+                title = { Text(I18N.text(R.string.err_update)) },
                 text = {
                     LazyColumn {
                         item {
@@ -415,7 +417,7 @@ object LoaderScreen {
     private fun ExpandableSection(@StringRes title: Int, expanded: Boolean, onExpandChange: (Boolean) -> Unit, content: @Composable () -> Unit) {
         Column(modifier = Modifier.clickable { onExpandChange(!expanded) }.fillMaxWidth().padding(horizontal = 12.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Text(text = I18N.string(title), fontWeight = FontWeight.Bold, modifier = Modifier.weight(1f).padding(vertical = 4.dp))
+                Text(text = I18N.text(title), fontWeight = FontWeight.Bold, modifier = Modifier.weight(1f).padding(vertical = 4.dp))
                 Icon(imageVector = if (expanded) Icons.Default.ExpandLess else Icons.Default.ExpandMore, contentDescription = null)
             }
             AnimatedVisibility(

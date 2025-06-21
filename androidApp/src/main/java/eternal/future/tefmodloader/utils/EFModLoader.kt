@@ -1,6 +1,8 @@
 package eternal.future.tefmodloader.utils
 
+import android.graphics.BitmapFactory
 import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.asImageBitmap
 import eternal.future.tefmodloader.config.AppConf
 import net.peanuuutz.tomlkt.Toml
 import net.peanuuutz.tomlkt.getArray
@@ -8,8 +10,6 @@ import net.peanuuutz.tomlkt.getBoolean
 import net.peanuuutz.tomlkt.getInteger
 import net.peanuuutz.tomlkt.getString
 import net.peanuuutz.tomlkt.getTable
-import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.decodeToImageBitmap
 import eternal.future.tefmodloader.config.AppState
 import eternal.future.tefmodloader.data.Compatibility
 import eternal.future.tefmodloader.data.EFModLoader
@@ -22,6 +22,7 @@ import eternal.future.tefmodloader.data.Platforms
 import eternal.future.tefmodloader.data.SupportModeAndroid
 import eternal.future.tefmodloader.data.SupportModeWindows
 import eternal.future.tefmodloader.data.SupportModes
+import eternal.future.tefmodloader.manager.I18N
 import java.io.File
 import java.io.FileInputStream
 import java.io.IOException
@@ -85,7 +86,7 @@ object EFModLoader {
         FileUtils.deleteDirectory(File(targetDirectory))
     }
 
-    @OptIn(ExperimentalResourceApi::class)
+
     fun loadLoadersFromDirectory(targetDirectory: String): List<EFModLoader>  {
 
         val directory = File(targetDirectory)
@@ -100,7 +101,7 @@ object EFModLoader {
                         val Icon = iconFile.readBytes()
 
                         if (Icon.isNotEmpty()) {
-                            LoaderIcon = Icon.decodeToImageBitmap()
+                            LoaderIcon = BitmapFactory.decodeByteArray(Icon, 0, Icon.size).asImageBitmap()
                         }
                     }
 
@@ -152,7 +153,7 @@ object EFModLoader {
                             highestStandards = toml.getTable("compatible").getInteger("highest_standards").toInt()
                         ),
                         introduces =  Introduction(
-                            description = toml.getTable("introduce").getString(Locales.getLanguage(AppState.language.value))
+                            description = toml.getTable("introduce").getString(I18N.getCurrentLocale())
                         ),
                         icon = LoaderIcon,
                         path = loaderDir.absolutePath,

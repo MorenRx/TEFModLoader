@@ -53,12 +53,11 @@ import androidx.compose.ui.unit.dp
 import androidx.core.graphics.drawable.toBitmap
 import eternal.future.Loader
 import eternal.future.tefmodloader.activity.MainActivity
-import eternal.future.tefmodloader.config.AppPrefs
+import eternal.future.tefmodloader.config.AppPrefsOld
 import eternal.future.tefmodloader.utils.EFMod
 import eternal.future.tefmodloader.utils.FileUtils
 import eternal.future.tefmodloader.config.AppState
 import eternal.future.tefmodloader.R
-import eternal.future.tefmodloader.activity.main.screen.welcome.GuideScreen
 import eternal.future.tefmodloader.config.AppConf
 import eternal.future.tefmodloader.manager.I18N
 import eternal.future.tefmodloader.utils.Apk
@@ -108,38 +107,38 @@ object HomeScreen {
             }
         }
 
-        if (AppPrefs.isFirstLaunch) {
+        if (AppPrefsOld.isFirstLaunch) {
 
             var showPatchedDialog by remember { mutableStateOf(true) }
 
             if (showPatchedDialog) {
                 AlertDialog(
                     onDismissRequest = { /* 不允许关闭对话框防止误触 */ },
-                    title = { I18N.text(R.string.temp_patched) },
+                    title = { Text(I18N.text(R.string.temp_patched)) },
                     text = {
                         Column {
-                            I18N.text(R.string.temp_patched_content)
+                            Text(I18N.text(R.string.temp_patched_content))
                         }
                     },
 
                     confirmButton = {
                         TextButton(onClick = {
                             showPatchingDialog = true
-                            AppPrefs.isFirstLaunch = false
+                            AppPrefsOld.isFirstLaunch = false
                             showPatchedDialog = false
                             AppState.autoPatch.value = false
                         }) {
-                            I18N.text(R.string.confirm)
+                            Text(I18N.text(R.string.confirm))
                         }
                     },
 
                     dismissButton = {
                         TextButton(onClick = {
-                            AppPrefs.isFirstLaunch
+                            AppPrefsOld.isFirstLaunch
                             showPatchedDialog = false
                             AppState.autoPatch.value = false
                         }) {
-                            I18N.text(R.string.cancel)
+                            Text(I18N.text(R.string.cancel))
                         }
                     }
                 )
@@ -149,17 +148,17 @@ object HomeScreen {
         if (showExportDialog) {
             AlertDialog(
                 onDismissRequest = { showExportDialog = false },
-                title = { I18N.text(R.string.export_file) },
+                title = { Text(I18N.text(R.string.export_file)) },
                 text = {
                     Column {
-                        I18N.text(R.string.temp_export_the_file_content)
+                        Text(I18N.text(R.string.temp_export_the_file_content))
                     } },
                 confirmButton = {
                     TextButton(onClick = {
                         exportFileLauncher.launch("patch.APK")
                         showExportDialog = false
                     }) {
-                        I18N.text(R.string.export)
+                        Text(I18N.text(R.string.export))
                     }
                 },
                 dismissButton = {
@@ -167,7 +166,7 @@ object HomeScreen {
                         File(context.getExternalFilesDir(null), "patch/Game.apk").delete()
                         showExportDialog = false
                     }) {
-                        I18N.text(R.string.temp_cancel_and_delete_the_file)
+                        Text( I18N.text(R.string.temp_cancel_and_delete_the_file))
                     }
                 }
             )
@@ -176,9 +175,9 @@ object HomeScreen {
         if (showPatchDialog) {
             AlertDialog(
                 onDismissRequest = { showPatchDialog = false },
-                title = { I18N.text(R.string.patch_game) },
+                title = { Text(I18N.text(R.string.patch_game)) },
                 text = {
-                    GuideScreen.Patch()
+                    //GuideScreen.Patch()
                 },
                 confirmButton = {
                     TextButton(onClick = {
@@ -186,12 +185,12 @@ object HomeScreen {
                         showPatchDialog = false
                         showPatchingDialog = true
                     }) {
-                        I18N.text(R.string.confirm)
+                        Text(I18N.text(R.string.confirm))
                     }
                 },
                 dismissButton = {
                     TextButton(onClick = {
-                        AppState.Mode.value = 0
+                        AppState.Mode.intValue = 0
                         AppState.Debugging.value = false
                         AppState.OverrideVersion.value = false
                         AppState.gamePack.value = false
@@ -199,7 +198,7 @@ object HomeScreen {
                         AppState.autoPatch.value = false
                         showPatchDialog = false
                     }) {
-                        I18N.text(R.string.temp_cancel_and_clear_the_configuration)
+                        Text(I18N.text(R.string.temp_cancel_and_clear_the_configuration))
                     }
                 }
             )
@@ -218,16 +217,17 @@ object HomeScreen {
             if (showPatchingDialog) {
                 AlertDialog(
                     onDismissRequest = { /* 不允许关闭对话框直到修补完成 */ },
-                    title = { I18N.text(R.string.patch_game) },
+                    title = { Text(I18N.text(R.string.patch_game)) },
                     text = {
                         Column {
-                            I18N.text(R.string.loading)
+                            Text(I18N.text(R.string.loading))
                             CircularProgressIndicator()
                         }
                     },
                     confirmButton = {}
                 )
 
+                val errPatch = I18N.text(R.string.err_patch)
                 LaunchedEffect(showPatchingDialog) {
                     if (showPatchingDialog) {
                         withContext(Dispatchers.IO) {
@@ -235,7 +235,7 @@ object HomeScreen {
 
                             if (AppState.autoPatch.value) {
                                 if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2) {
-                                    AppState.Mode.value = 1
+                                    AppState.Mode.intValue = 1
                                 }
                                 Apk.extractWithPackageName("com.and.games505.TerrariaPaid", target.path)
                             }
@@ -255,7 +255,7 @@ object HomeScreen {
 
                             if (!target.exists()) {
                                 scope.launch {
-                                    snackbarHostState.showSnackbar(I18N.string(R.string.err_patch))
+                                    snackbarHostState.showSnackbar(errPatch)
                                 }
                             } else {
 
@@ -303,7 +303,7 @@ object HomeScreen {
                                     strokeWidth = 2.dp
                                 )
                             }
-                            Text(I18N.string(R.string.temp_launch_the_menu), style = MaterialTheme.typography.headlineSmall)
+                            Text(I18N.text(R.string.temp_launch_the_menu), style = MaterialTheme.typography.headlineSmall)
                         }
                     },
                     text = {
@@ -316,6 +316,7 @@ object HomeScreen {
                                 )
                             }
 
+                            val errInit = I18N.text(R.string.err_init)
                             LazyColumn {
                                 val game = Apk.getPackageNamesWithMetadata("TEFModLoader")
 
@@ -389,7 +390,7 @@ object HomeScreen {
                                                                 Loader.initialize()
                                                             }
                                                         } catch (e: Exception) {
-                                                            val errorMsg = "${I18N.text(R.string.err_init)}: ${e.localizedMessage}"
+                                                            val errorMsg = "${errInit}: ${e.localizedMessage}"
                                                             initializationError = errorMsg
                                                             isLoading = false
                                                         }
@@ -435,14 +436,15 @@ object HomeScreen {
                                             }
                                         }
 
+                                        val unknownVersion = I18N.text(R.string.version_unknown)
                                         val versionInfo = remember(packageName) {
                                             try {
                                                 context.packageManager.getPackageInfo(
                                                     packageName,
                                                     PackageManager.GET_META_DATA
-                                                ).versionName ?: I18N.text(R.string.version_unknown)
+                                                ).versionName ?: unknownVersion
                                             } catch (e: Exception) {
-                                                I18N.text(R.string.version_unknown)
+                                                unknownVersion
                                             }
                                         }
 
@@ -476,7 +478,7 @@ object HomeScreen {
                                                                                     Environment.getExternalStorageDirectory(),
                                                                                     "Documents/TEFModLoader"
                                                                                 ).path,
-                                                                                if (AppState.architecture.value == 0) gameAbis else null
+                                                                                if (AppPrefsOld.architecture == 0) gameAbis else null
                                                                             )
 
                                                                             EFMod.initialize_data(
@@ -487,7 +489,7 @@ object HomeScreen {
                                                                                 ).path
                                                                             )
 
-                                                                            AppPrefs.isExternalMode = true
+                                                                            AppPrefsOld.isExternalMode = true
 
                                                                             Apk.launchAppByPackageName(
                                                                                 packageName
@@ -497,7 +499,7 @@ object HomeScreen {
                                                                     }
                                                                 }
                                                             } catch (e: Exception) {
-                                                                val errorMsg = "${I18N.text(R.string.err_init)}: ${e.localizedMessage}"
+                                                                val errorMsg = "${errInit}: ${e.localizedMessage}"
                                                                 initializationError = errorMsg
                                                                 isLoading = false
                                                             }
@@ -563,8 +565,8 @@ object HomeScreen {
                 ) {
                     item {
                         stateCard(
-                            title = I18N.string(R.string.temp_running),
-                            description = I18N.string(R.string.temp_running_content),
+                            title = I18N.text(R.string.temp_running),
+                            description = I18N.text(R.string.temp_running_content),
                             isActive = true,
                             modifier = Modifier.fillMaxWidth(),
                             onClick = {
@@ -580,13 +582,13 @@ object HomeScreen {
                     item {
 
                         val updateLogs = listOf(
-                            I18N.string(R.string.update_log_100000_title) to I18N.string(R.string.update_log_100000_desc),
-                            I18N.string(R.string.update_log_100400_title) to I18N.string(R.string.update_log_100400_desc)
+                            I18N.text(R.string.update_log_100000_title) to I18N.text(R.string.update_log_100000_desc),
+                            I18N.text(R.string.update_log_100400_title) to I18N.text(R.string.update_log_100400_desc)
                         )
 
                         updateLogCard(
-                            title = I18N.string(R.string.update_log),
-                            confirmButton = I18N.string(R.string.close),
+                            title = I18N.text(R.string.update_log),
+                            confirmButton = I18N.text(R.string.close),
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(15.dp),
@@ -601,7 +603,7 @@ object HomeScreen {
 
                 ExtendedFloatingActionButton(
                     icon = { Icon(Icons.Default.VideogameAsset, contentDescription = "Launch the game") },
-                    text = {  I18N.text(R.string.launch_game) },
+                    text = { Text(I18N.text(R.string.launch_game)) },
                     containerColor = MaterialTheme.colorScheme.primary,
                     onClick = {
                         if (Apk.doesAnyAppContainMetadata("TEFModLoader") || hasUnityDataFile) {

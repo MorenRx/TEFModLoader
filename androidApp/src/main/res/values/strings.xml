@@ -1,236 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="update_log">Update Log</string>
-    <string name="update_log_100000_title">💐 0.10.0 - New Beginning</string>
-    <string name="update_log_100000_desc">1. Rewrite of the underlying layer + UI</string>
-    <string name="update_log_100400_title">TODO</string>
-    <string name="update_log_100400_desc">0.10.4</string>
+    <string name="update_log">更新日志</string>
+    <string name="update_log_100000_title">💐 0.10.0 - 新起点</string>
+    <string name="update_log_100000_desc">1. 重写底层 + UI</string>
+    <string name="update_log_100400_title">0.10.4</string>
+    <string name="update_log_100400_desc">TODO</string>
 
     <string name="lang_en" translatable="false">English</string>
     <string name="lang_zh_rcn" translatable="false">简体中文</string>
     <string name="lang_zh_rhk" translatable="false">繁體中文</string>
 
-    <string name="follow_system">Follow System</string>
-    <string name="back">Back</string>
-    <string name="exit">Exit</string>
-    <string name="more">More</string>
-    <string name="mode">Mode</string>
-    <string name="close">Close</string>
-    <string name="cancel">Cancel</string>
-    <string name="confirm">Confirm</string>
-    <string name="confirm_delete">Are you sure you want to delete</string>
-    <string name="version">Version</string>
-    <string name="version_unknown">Unknown Version</string>
-    <string name="details">Details</string>
-    <string name="disable">Disable</string>
-    <string name="search">Search</string>
-    <string name="desc">Description</string>
-    <string name="unlimited">Unlimited</string>
-    <string name="next">Next</string>
-    <string name="export">Export</string>
-    <string name="export_file">Export File</string>
-    <string name="patching">Patching…</string>
-    <string name="patch_game">Patch Game</string>
-    <string name="launch_game">Launch Game</string>
-    <string name="loading">The maiden is praying…</string>
-    <string name="back_home">Back to Main</string>
-    <string name="exit_again">Press again to exit</string>
+    <string name="follow_system">跟随系统</string>
+    <string name="more">更多</string>
+    <string name="mode">模式</string>
+    <string name="close">退出</string>
+    <string name="auto">自动</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="version">版本</string>
+    <string name="details">详细</string>
+    <string name="disable">禁用</string>
+    <string name="search">搜索</string>
+    <string name="desc">介绍</string>
+    <string name="back">返回</string>
+    <string name="exit">退出</string>
+    <string name="next">下一步</string>
+    <string name="unlimited">无限制</string>
+    <string name="export">导出</string>
+    <string name="loading">少女祈祷中…</string>
+    <string name="installing">安装中…</string>
+    <string name="patching">修补中…</string>
+    <string name="updating">更新中…</string>
+    <string name="back_home">返回主页</string>
+    <string name="exit_again">再按一次退出</string>
+    <string name="confirm_delete">你确定要删除</string>
+    <string name="version_unknown">未知版本</string>
+    <string name="export_file">导出文件</string>
+    <string name="patch_game">修补游戏</string>
 
-    <string name="err_patch">Unable to find the patch file!</string>
-    <string name="err_init">Initialization failed</string>
+    <string name="err_init">初始化失败</string>
+    <string name="err_patch">无法找到修补的文件！</string>
+    <string name="err_install">安装失败</string>
+    <string name="err_update">更新失败</string>
 
-    <string name="about_slogan">Every beam of your starlight is a gentle poem written to the world.</string>
-    <string name="about_repo_title">Open Source Code</string>
-    <string name="about_repo_desc">Navigate to the open-source repository of TEFModLoader</string>
-    <string name="about_donate_title">Donor List</string>
-    <string name="about_donate_desc">We sincerely appreciate all generous donations</string>
-    <string name="about_license_title">Open Source License</string>
-    <string name="about_license_desc">Open-source projects used</string>
-    <string name="about_thanks_title">Special Thanks</string>
-    <string name="about_thanks_desc">People who have contributed to this project</string>
-    <string name="about_feedback_title">Feedback</string>
-    <string name="about_feedback_desc">Report bugs / Suggest improvements</string>
-    <string name="about_development">Important Contributions</string>
-    <string name="about_contributor">Navigate to the open-source repository of TEFModLoader</string>
-    <string name="about_contribution_eternalfuture">Don\'t look, I didn\'t do anything qwq (hehe</string>
-    <string name="about_contribution_morenrx">Provided clean packages early on
-        \nInspiration and functionality for certain pages
-        \nEarly project optimization
+    <string name="dark_mode_disable">总是关闭</string>
+    <string name="dark_mode_enable">总是启用</string>
+
+    <string name="theme_default">默认</string>
+    <string name="theme_ocean">沧海明月</string>
+    <string name="theme_autumn">朱雀烈阳</string>
+    <string name="theme_green">翠竹幽林</string>
+    <string name="theme_yellow">金秋稻香</string>
+    <string name="theme_pink">桃花春水</string>
+    <string name="theme_purple">紫气东来</string>
+
+    <string name="title_welcome">欢迎使用TEFModLoader</string>
+    <string name="title_home">主页</string>
+    <string name="title_help">帮助</string>
+    <string name="title_settings">设置</string>
+    <string name="title_manager_loader">Loader管理</string>
+    <string name="title_about">关于</string>
+    <string name="title_terminal">终端</string>
+    <string name="title_manager_mod">Mod管理</string>
+    <string name="title_license">开源许可</string>
+    <string name="title_thanks">特別鳴謝</string>
+
+    <string name="launch_game">启动游戏</string>
+    <string name="launch_mode_external">外部模式</string>
+    <string name="launch_mode_share">共享模式</string>
+    <string name="launch_mode_inline">嵌入模式</string>
+    <string name="launch_mode_root">Root(危险)</string>
+
+    <string name="temp_patched">已存在修补方案</string>
+    <string name="temp_patched_content">是否使用已存在的方案进行修补？</string>
+    <string name="temp_export_the_file_content">已存在修补文件，是否导出？</string>
+    <string name="temp_cancel_and_delete_the_file">取消并删除文件</string>
+    <string name="temp_launch_the_menu">启动菜单</string>
+    <string name="temp_running">运行中</string>
+    <string name="temp_cancel_and_clear_the_configuration">取消并清除配置</string>
+    <string name="temp_running_content">如果您需要修补游戏请点击此卡片添加修补</string>
+    <string name="temp_export_logs">导出日志</string>
+    <string name="temp_export_logs_content">导出运行日志供发现问题</string>
+
+    <string name="guide_enable_tip">推荐启用</string>
+    <string name="guide_default_loader">安装默认加载器</string>
+    <string name="guide_default_loader_desc">首次使用不推荐关闭</string>
+    <string name="guide_auto_patch">自动修补已安装的游戏包</string>
+    <string name="guide_auto_patch_desc">如果你安装了游戏且不会操作就勾选，注意不支持加密包！</string>
+
+    <string name="help_package_invalid_title">修补的游戏安装包无效？</string>
+    <string name="help_package_invalid_desc">如果出现这种情况请使用MT管理器查看是否签名以及APK是否正常</string>
+    <string name="help_package_install_title">修补的游戏安装包无法安装？</string>
+    <string name="help_package_install_desc">请确保签名与管理器是完全一致的</string>
+
+    <string name="loader_install">安装Loader</string>
+    <string name="loader_delete">删除加载器</string>
+    <string name="loader_support">加载器支持</string>
+    <string name="loader_support_windows">Windows平台支持</string>
+    <string name="loader_support_android">Android平台支援</string>
+    <string name="loader_header_error">非标准Loader文件头</string>
+
+    <string name="mod_install">安装Mod</string>
+    <string name="mod_delete">删除Mod</string>
+    <string name="mod_header_error">非标准Mod文件头</string>
+
+    <string name="setting_title_general">常规</string>
+    <string name="setting_dark_mode">深色模式</string>
+    <string name="setting_theme">主题</string>
+    <string name="setting_language">语言</string>
+    <string name="setting_title_advanced">高级</string>
+    <string name="setting_launch_mode">启动模式</string>
+    <string name="setting_architecture">架构</string>
+    <string name="setting_log_cache">日志文件最大大小</string>
+    <string name="setting_debug">调试</string>
+    <string name="setting_debug_desc">允许包被调试</string>
+    <string name="setting_custom_apk">选择自定义安装包</string>
+    <string name="setting_custom_apk_desc">选择后将不会自动使用已安装的游戏包否则使用已安装的游戏包</string>
+    <string name="setting_bypass">绕过检测</string>
+    <string name="setting_bypass_desc">使用SilkRift尝试绕过安装包中的某些检测</string>
+    <string name="setting_override">覆写版本代码</string>
+    <string name="setting_override_desc">将版本代码改为1可降级安装</string>
+
+    <string name="about_slogan">你的每一缕星光，都是写给世界的温柔诗篇。</string>
+    <string name="about_repo_title">开源代码</string>
+    <string name="about_repo_desc">跳转到TEFModLoader的开源仓库</string>
+    <string name="about_donate_title">捐赠名单</string>
+    <string name="about_donate_desc">衷心感谢所有支持者的慷慨捐赠</string>
+    <string name="about_thanks_title">特别鸣谢</string>
+    <string name="about_thanks_desc">为此项目作出共享的人</string>
+    <string name="about_license_title">开源许可</string>
+    <string name="about_license_desc">使用的开源项目</string>
+    <string name="about_feedback_title">反馈</string>
+    <string name="about_feedback_desc">反馈bug/提出建议</string>
+    <string name="about_development">开发</string>
+    <string name="about_contributor">重要贡献</string>
+    <string name="about_contribution_eternalfuture">别看捏，我什么都没做qwq(bushi</string>
+    <string name="about_contribution_morenrx">早期提供纯净包
+        \n某些页面的灵感及功能
+        \n早期项目优化
     </string>
-    <string name="about_contribution_jiangnight">Laid the foundation for the project\'s Compose UI
-        \nTerraria icon design
+    <string name="about_contribution_jiangnight">为项目的 Compose UI 奠定了重要基础
+        \nTerraria图标设计
     </string>
-    <string name="about_contribution_yuwu">Contributed to early software rewrites, optimized settings pages
-        \nLogo design
-        \nEnglish translation</string>
-    <string name="about_contribution_qwq3094">Early UI improvements</string>
-    <string name="about_contribution_aaa1115910">Guidance on how to open files with TR Save Editor</string>
-
-    <string name="launch_mode_external">External Mode</string>
-    <string name="launch_mode_share">Share Mode</string>
-    <string name="launch_mode_inline">Inline Mode</string>
-    <string name="launch_mode_root">Root (Dangerous)</string>
-
-    <string name="temp_patched">Patch Available</string>
-    <string name="temp_patched_content">Do you want to use the existing patch?</string>
-    <string name="temp_export_the_file_content">A patched file already exists. Do you want to export it?</string>
-    <string name="temp_cancel_and_delete_the_file">Cancel and Delete File</string>
-    <string name="temp_cancel_and_clear_the_configuration">Cancel and Clear Configuration</string>
-    <string name="temp_launch_the_menu">Launch Menu</string>
-    <string name="temp_running">Running</string>
-    <string name="temp_running_content">If you need to patch the game, click this card to add a patch.</string>
-
-    <string name="theme_default">Default</string>
-    <string name="theme_ocean">Cang Hai Ming Yue</string>
-    <string name="theme_autumn">Zhu Que Lie Yang</string>
-    <string name="theme_green">Cui Zhu You Lin</string>
-    <string name="theme_yellow">Jin Qiu Dao Xiang</string>
-    <string name="theme_pink">Tao Hua Chun Shui</string>
-    <string name="theme_purple">Zi Qi Dong Lai</string>
-
-    <string name="dark_mode_enable">Always Enabled</string>
-    <string name="dark_mode_disable">Always Disabled</string>
-
-    <string name="title_welcome">Welcome To TEFModLoader</string>
-    <string name="title_home">Home</string>
-    <string name="title_manager_mod">Mod Management</string>
-    <string name="title_manager_loader">Loader Management</string>
-    <string name="title_about">About</string>
-    <string name="title_help">Help</string>
-    <string name="title_settings">Settings</string>
-    <string name="title_terminal">Terminal</string>
-    <string name="title_license">Open Source License</string>
-    <string name="title_thanks">Special Thanks</string>
-
-    <string name="setting_title_general">General</string>
-    <string name="setting_title_advanced">Advanced</string>
-
-    <string name="setting_theme">Theme</string>
-    <string name="setting_launch_mode">Launch Mode</string>
-    <string name="setting_dark_mode">Dark Mode</string>
-    <string name="setting_language">Language</string>
-    <string name="setting_architecture">Architecture</string>
-    <string name="setting_log_cache">Maximum log file size</string>
-    <string name="setting_custom_apk">Select Custom APK</string>
-    <string name="setting_custom_apk_desc">After selection, it will not automatically use the installed game package;
-        otherwise, it will use the installed game package
+    <string name="about_contribution_yuwu">参与软件早期重写，优化设置页面
+        \nLogo设计
+        \n英语翻译
     </string>
-    <string name="setting_bypass">Bypass detection</string>
-    <string name="setting_bypass_desc">Use SilkRift to attempt to bypass certain detections in the installation
-        package
+    <string name="about_contribution_qwq3094">早期的部分UI改进</string>
+    <string name="about_contribution_aaa1115910">指导文件如何才能以TR Save Editor方式打开</string>
+
+    <string name="agreement_user_title">用户协议</string>
+    <string name="agreement_user_consent">我已阅读并同意以上用户协议。</string>
+    <string name="agreement_user_desc">欢迎使用我们的应用程序（以下简称“本应用”）。请在使用前仔细阅读以下用户协议（以下简称“本协议”），本协议详细说明了您在使用本应用时的权利与义务。
+        \n
+        \n## 一、信息收集
+        \n
+        \n为了优化您的使用体验，本应用仅会收集必要的信息以识别被激活的应用程序列表。我们承诺不会收集用户的个人信息，包括但不限于姓名、联系方式、位置信息等。
+        \n
+        \n## 二、文件管理权限
+        \n
+        \n本应用可能需要请求访问设备上的文件管理权限，以便于管理游戏或其他应用程序的Mod文件。此权限仅用于TEFModLoader默认功能，且该功能不会对您的手机造成威胁。
+        \n
+        \n### 风险提示
+        \n
+        \n- **第三方Mod**：本应用允许用户安装第三方Mod，但请注意，这些Mod可能未经验证，存在安全风险。使用任何未授权或不受信任的第三方Mod可能导致数据丢失、隐私泄露或其他安全问题。
+        \n- **第三方插件页面**：通过本应用访问的第三方插件页面可能存在安全隐患。建议用户避免从不可信来源下载内容。
+        \n- **第三方Loader**：除本应用外，其他第三方提供的Loader也可能存在风险，请谨慎选择并使用。
+        \n
+        \n## 三、免责条款
+        \n
+        \n- **绝对责任限制**：使用本应用即表示您完全理解并同意，因使用本应用或其相关服务所造成的任何后果均由您自行承担。这包括但不限于数据丢失、设备损坏、利润损失、法律纠纷等。无论何种原因导致的损害，本应用的制作者均不承担任何责任。
+        \n- **Root权限**：本应用可能会根据用户需求申请设备的root权限。请注意，获取和使用root权限存在较高风险，可能导致设备安全性降低、系统不稳定等问题。请慎重考虑是否授予此类权限。
+        \n- **第三方内容**：本应用不对第三方Mod、插件或通过本应用访问的其他第三方内容负责。用户应自行承担使用这些内容的风险。
+        \n
+        \n## 四、开源地址
+        \n
+        \n本应用是开源项目，源代码托管于 GitHub： [https://github.com/2079541547/TEFModLoader](https://github.com/2079541547/TEFModLoader)。您可以访问该地址查看项目的源代码、提出问题或贡献代码。
+        \n
+        \n## 五、遵守法规
+        \n
+        \n使用本应用即表示您同意遵守所有适用的国际法、国家法律法规以及地方法规的规定。
+        \n
+        \n## 六、协议变更
+        \n
+        \n我们保留在任何时候修改本协议的权利。任何更新后的协议将在本页面发布，并自发布之日起生效。
     </string>
-    <string name="setting_debug">Debug</string>
-    <string name="setting_debug_desc">Allow the package to be debugged</string>
-    <string name="setting_override">Override Version Code</string>
-    <string name="setting_override_desc">Change the version code to 1 for downgrading installation</string>
-
-    <string name="guide_enable_tip">Recommended to enable</string>
-    <string name="guide_default_loader">Install Default Loader</string>
-    <string name="guide_default_loader_desc">Disabling on first use is not recommended.</string>
-    <string name="guide_auto_patch">Auto-Patch Installed Game Packages</string>
-    <string name="guide_auto_patch_desc">Check this if you have installed games and are unsure how to operate. Note:
-        does not support encrypted packages!
+    <string name="agreement_loader_title">EFModLoader使用协议</string>
+    <string name="agreement_loader_consent">我已阅读并同意以上EFModLoader使用协议。</string>
+    <string name="agreement_loader_desc">## 1. 使用目的
+        \n
+        \n- **EFModLoader** 是一个旨在为游戏添加扩展功能的工具。虽然其工作原理与某些外挂类似，但作者坚决反对任何游戏作弊行为。作者完全支持社会主义，支持中国共产党的领导，确保本工具的使用符合社会主义核心价值观的要求。
+        \n- 本工具仅供学习和研究使用，与现实中任何真实事件无关，请用户不要代入或联想。EFModLoader 中出现的所有功能、效果均为虚构，与现实中的任何个体、团体或事件无任何关联。
+        \n
+        \n## 2. 禁止作弊
+        \n
+        \n- 请勿使用本工具进行任何形式的游戏作弊行为。任何违反游戏规则的行为都是不道德的，可能导致您的账号被封禁。作者坚决反对一切破坏游戏公平性的行为，维护健康的游戏环境。
+        \n- 使用本工具进行作弊或其他不道德行为的用户，将自行承担所有法律责任。作者不对因用户不当使用本工具而产生的任何后果负责。
+        \n
+        \n## 3. 游戏环境
+        \n
+        \n- 请勿使用本工具破坏游戏平衡或干扰其他玩家的正常游戏体验。尊重其他玩家，共同维护良好的游戏环境。作者倡导公平、公正的游戏环境，反对一切破坏游戏平衡的行为。
+        \n- 用户在使用本工具时，应遵守游戏平台的相关规则和法律法规，确保使用本工具的行为合法合规。
+        \n
+        \n## 4. 内容性质说明
+        \n
+        \n- 本工具仅供学习和研究使用，与现实中任何真实事件无关，请用户不要代入或联想。EFModLoader 中出现的所有功能、效果均为虚构，与现实中的任何个体、团体或事件无任何关联。
+        \n- 本工具中的所有内容均为创意虚构，与任何现实中的事件、人物或组织无任何关联。用户不应将本工具中的任何内容与现实生活中的事件或人物进行对比或联想。
+        \n- 用户在使用本工具时，需自行承担所有法律责任。作者不对因用户不当使用本工具而产生的任何后果负责。用户应遵守当地法律法规，确保使用本工具的行为合法合规。
+        \n
+        \n## 5. 法律责任
+        \n
+        \n- 使用本工具的用户需自行承担所有法律责任。作者不对因不当使用本工具而产生的任何后果负责。用户应遵守当地法律法规，确保使用本工具的行为合法合规。
+        \n- 任何用户在使用本工具时，必须遵守相关法律法规。作者不对用户因不当使用本工具而产生的任何法律责任负责。用户应自行判断并承担所有法律责任。
+        \n- 作者保留对本工具的所有内容进行审查的权利，确保所有内容符合法律法规和社会道德标准。任何违反法律法规或社会道德的内容将被立即删除。
+        \n
+        \n## 6. 用户行为规范
+        \n
+        \n- 用户在使用本工具时，必须遵守以下行为规范：
+        \n- 不得用于任何非法或不道德的目的。
+        \n- 不得用于破坏游戏平衡或干扰其他玩家的正常游戏体验。
+        \n- 不得用于任何可能引起社会不安或争议的行为。
+        \n- 不得用于任何侵犯他人隐私或权益的行为。
+        \n- 违反上述行为规范的用户，将自行承担所有法律责任。
+        \n- 任何不遵守本协议的使用行为均不属于EFModLoader的范围，作者对此类行为不承担任何责任。
+        \n
+        \n## 7. 最终解释权
+        \n
+        \n- 作者保留对本协议和声明的最终解释权。如有任何争议，作者将依据相关法律法规进行处理。
+        \n- **作者保留随时修改本协议的权利，无需事先通知用户。** 修改后的协议将在作者的官方网站和GitHub页面上公布，用户应定期查看以了解最新版本。一旦继续使用本工具，即表示接受更新后的协议条款。
     </string>
-
-    <string name="loader_support">Loader Support</string>
-    <string name="loader_support_windows">Windows platform support</string>
-    <string name="loader_support_android">Android platform support</string>
-    <string name="loader_delete">Delete the loader</string>
-    <string name="loader_install">Install Loader</string>
-    <string name="loader_header_error">Non-standard Loader File Header</string>
-
-    <string name="mod_delete">Delete the mod</string>
-    <string name="mod_header_error">Non-standard mod file headers</string>
-
-    <string name="installing">Installing…</string>
-    <string name="install_error">Installation Failed</string>
-
-    <string name="updating">Updating…</string>
-    <string name="update_error">Update failed</string>
-
-    <string name="help_package_invalid_title">Invalid patched game installation package?</string>
-    <string name="help_package_invalid_desc">If this happens, please use the MT Manager to check if it is signed and whether the APK is normal.</string>
-    <string name="help_package_install_title">Patched game installation package cannot be installed?</string>
-    <string name="help_package_install_desc">Please ensure that the signature is exactly the same as in the manager.</string>
-
-    <string name="agreement_user_title">User Agreement</string>
-    <string name="agreement_user_consent">I have read and agree to the above User Agreement.</string>
-    <string name="agreement_user_desc">Welcome to our application (hereinafter referred to as "the App"). Please read the following user agreement (hereinafter referred to as "this Agreement") carefully before using it. This Agreement details your rights and obligations when using the App.
-        \n
-        \n## I. Information Collection
-        \n
-        \nTo optimize your user experience, the App will only collect necessary information to identify the list of activated applications. We promise not to collect personal information from users, including but not limited to names, contact details, location information, etc.
-        \n
-        \n## II. File Management Permissions
-        \n
-        \nThe App may request access to file management permissions on your device to manage Mod files for games or other applications. This permission is only used for the default functionality of TEFModLoader, and this function will not pose a threat to your phone.
-        \n
-        \n### Risk Warning
-        \n
-        \n- **Third-party Mods**: The App allows users to install third-party Mods, but please note that these Mods may be unverified and pose security risks. Using any unauthorized or untrusted third-party Mods can lead to data loss, privacy leaks, or other security issues.
-        \n- **Third-party Plugin Pages**: Third-party plugin pages accessed through the App may have security risks. Users are advised to avoid downloading content from untrusted sources.
-        \n- **Third-party Loaders**: Other third-party provided Loaders, apart from this App, may also carry risks. Please choose and use them cautiously.
-        \n
-        \n## III. Disclaimer
-        \n
-        \n- **Absolute Liability Limitation**: By using the App, you fully understand and agree that any consequences resulting from the use of the App or its related services are borne by you. This includes, but is not limited to, data loss, device damage, profit loss, legal disputes, etc. The creators of the App will not assume any responsibility for damages caused by any reason.
-        \n- **Root Permissions**: The App may request root permissions on your device based on user needs. Please note that obtaining and using root permissions carries significant risks, such as reduced device security and system instability. Please consider carefully whether to grant such permissions.
-        \n- **Third-party Content**: The App does not take responsibility for third-party Mods, plugins, or other third-party content accessed through the App. Users should bear the risks associated with using these contents themselves.
-        \n
-        \n## IV. Open Source Address
-        \n
-        \nThis App is an open-source project, with the source code hosted on GitHub: [https://github.com/2079541547/TEFModLoader](https://github.com/2079541547/TEFModLoader). You can visit this address to view the project's source code, raise issues, or contribute code.
-        \n
-        \n## V. Compliance with Laws and Regulations
-        \n
-        \nBy using this App, you agree to comply with all applicable international laws, national laws and regulations, and local laws and regulations.
-        \n
-        \n## VI. Agreement Changes
-        \n
-        \nWe reserve the right to modify this Agreement at any time. Any updated agreement will be posted on this page and will take effect from the date of posting.</string>
-    <string name="agreement_loader_title">EFModLoader Usage Agreement</string>
-    <string name="agreement_loader_consent">I have read and agree to the above EFModLoader Usage Agreement.</string>
-    <string name="agreement_loader_desc">## 1. Purpose of Use
-        \n
-        \n- **EFModLoader** is a tool designed to add extended functionality to games. Although its working principle is similar to certain cheats, the author firmly opposes any form of game cheating. The author fully supports socialism and the leadership of the Chinese Communist Party, ensuring that the use of this tool complies with the core values of socialism.
-        \n- This tool is for learning and research purposes only and is not related to any real events. Users should not associate or imagine connections between EFModLoader\'s features and real-world individuals, groups, or events.
-        \n
-        \n## 2. Prohibition of Cheating
-        \n
-        \n- Do not use this tool for any form of game cheating. Any violation of game rules is unethical and may lead to account bans. The author firmly opposes all behaviors that disrupt fair play and promotes a healthy gaming environment.
-        \n- Users who use this tool for cheating or other unethical behaviors will bear all legal responsibilities. The author is not responsible for any consequences arising from improper use of this tool.
-        \n
-        \n## 3. Gaming Environment
-        \n
-        \n- Do not use this tool to disrupt game balance or interfere with other players\' normal gaming experiences. Respect other players and jointly maintain a good gaming environment. The author advocates fairness and justice in gaming environments and opposes any actions that disrupt game balance.
-        \n- When using this tool, users must comply with relevant rules and regulations of the gaming platform to ensure their behavior is legal and compliant.
-        \n
-        \n## 4. Nature of Content
-        \n
-        \n- This tool is for learning and research purposes only and is not related to any real events. Users should not associate or imagine connections between EFModLoader\'s features and real-world individuals, groups, or events.
-        \n- All content within this tool is fictional and has no association with any real-world events, characters, or organizations. Users should not compare or relate any content within this tool to real-life events or people.
-        \n- Users are responsible for all legal liabilities when using this tool. The author is not responsible for any consequences resulting from improper use. Users must comply with local laws and regulations to ensure their use of the tool is legal and compliant.
-        \n
-        \n## 5. Legal Liability
-        \n
-        \n- Users of this tool are responsible for all legal liabilities. The author is not responsible for any consequences arising from improper use. Users must comply with local laws and regulations to ensure their use of the tool is legal and compliant.
-        \n- Any user using this tool must abide by relevant laws and regulations. The author is not responsible for any legal liabilities arising from improper use. Users must judge and assume all legal liabilities on their own.
-        \n- The author reserves the right to review all content within this tool to ensure it meets legal and social moral standards. Any content violating laws or social morals will be immediately deleted.
-        \n
-        \n## 6. User Conduct Guidelines
-        \n
-        \n- Users must adhere to the following conduct guidelines when using this tool:
-        \n- Not to be used for any illegal or unethical purposes.
-        \n- Not to be used to disrupt game balance or interfere with other players' normal gaming experiences.
-        \n- Not to be used for any behavior that may cause social unrest or controversy.
-        \n- Not to be used for any behavior that violates others' privacy or rights.
-        \n- Users who violate these guidelines will bear all legal responsibilities.
-        \n- Any usage behavior that does not comply with this agreement falls outside the scope of EFModLoader, and the author assumes no responsibility for such behavior.
-        \n
-        \n## 7. Final Interpretation Rights
-        \n
-        \n- The author reserves the final interpretation rights of this agreement and statement. In case of any disputes, the author will handle them according to relevant laws and regulations.
-        \n- **The author reserves the right to modify this agreement at any time without prior notice to users.** Updated agreements will be posted on the author's official website and GitHub page. Users should regularly check for the latest version. Continued use of the tool indicates acceptance of the updated agreement terms.
-    </string>
-
 </resources>

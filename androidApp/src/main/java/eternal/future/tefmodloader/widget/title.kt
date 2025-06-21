@@ -16,9 +16,9 @@ import androidx.compose.ui.draw.shadow
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppTopBar(
-    title: CharSequence,
+    title: String,
     scrollBehavior: TopAppBarScrollBehavior? = null,
-    menuItems: Map<CharSequence, Pair<ImageVector, () -> Unit>>? = null,
+    menuItems: Map<String, Pair<ImageVector, () -> Unit>>? = null,
     showMenu: Boolean = true,
     showBackButton: Boolean = false,
     onBackClick: (() -> Unit)? = null
@@ -33,7 +33,7 @@ fun AppTopBar(
         tonalElevation = 4.dp
     ) {
         TopAppBar(
-            title = { title },
+            title = { Text(title) },
             navigationIcon = {
                 if (showBackButton && onBackClick != null) {
                     IconButton(onClick = onBackClick) {
@@ -60,7 +60,7 @@ fun AppTopBar(
                             val icon = pair.first
                             val onClick = pair.second
                             DropdownMenuItem(
-                                text = { title },
+                                text = { Text(title) },
                                 leadingIcon = {
                                     Icon(
                                         imageVector = icon,

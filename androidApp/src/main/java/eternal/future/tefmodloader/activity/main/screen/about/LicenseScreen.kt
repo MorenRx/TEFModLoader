@@ -26,8 +26,8 @@ object LicenseScreen {
     data class LicenseInfo(
         val name: String,
         val description: String,
-        val license: String,
-        val url: String
+        val url: String,
+        val license: String
     )
 
     object License {

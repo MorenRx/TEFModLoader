@@ -1,4 +1,4 @@
-package eternal.future.tefmodloader.activity.main.screen.welcome
+package eternal.future.tefmodloader.activity.main.screen
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.core.Animatable

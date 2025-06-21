@@ -21,6 +21,7 @@ android {
         isEnable = true
         reset()
         include("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
+        isUniversalApk = true
     }
 
     packaging {
@@ -44,7 +45,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
@@ -66,11 +67,16 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3.android)
     implementation(libs.material.icons.extended)
+    implementation(libs.bcprov.jdk18on)
+    implementation(libs.bcpkix.jdk18on)
     implementation(libs.tomlkt)
     implementation(libs.apkzlib)
+    implementation(libs.apksig)
+    implementation(libs.androidx.datastore.preferences)
     implementation(project(":android:core"))
     implementation(project(":android:axml"))
 }

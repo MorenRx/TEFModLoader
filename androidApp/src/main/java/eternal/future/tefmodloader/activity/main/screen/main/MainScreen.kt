@@ -1,5 +1,6 @@
 package eternal.future.tefmodloader.activity.main.screen.main
 
+import android.R.attr.label
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Column
@@ -16,6 +17,7 @@ import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Terminal
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
@@ -49,7 +51,7 @@ object MainScreen {
         viewModel.setInitialScreen("home")
     }
 
-    val title = mutableStateOf(I18N.text(R.string.title_home))
+    val title = mutableStateOf(R.string.title_home)
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
@@ -67,28 +69,28 @@ object MainScreen {
                     I18N.text(R.string.exit) to Pair(Icons.AutoMirrored.Filled.ExitToApp) { mainViewModel.navigateBack(BackMode.ONE_BY_ONE) }
                 )
                 AppTopBar(
-                    title = title.value,
+                    title = I18N.text(title.value),
                     menuItems = menuItems
                 )
             },
             bottomBar = {
 
                 val items = listOf(
-                    Icons.Default.Home to I18N.text(R.string.title_home),
-                    Icons.Filled.Extension to I18N.text(R.string.title_manager_mod),
-                    Icons.Filled.Build to I18N.text(R.string.title_manager_loader)
+                    Triple("home", Icons.Default.Home, R.string.title_home),
+                    Triple("efmod", Icons.Filled.Extension, R.string.title_manager_mod),
+                    Triple("loader", Icons.Filled.Build, R.string.title_manager_loader),
                 )
 
                 NavigationBar {
-                    items.forEachIndexed { route, (icon, label) ->
+                    items.forEach {
                         NavigationBarItem(
-                            selected = title.value == label,
+                            selected = title.value == it.third,
                             onClick = {
-                                title.value = label
-                                viewModel.navigateTo("label")
+                                title.value = it.third
+                                viewModel.navigateTo(it.first)
                             },
-                            icon = { icon },
-                            label = { label },
+                            icon = { Icon(it.second,I18N.text(it.third)) },
+                            label = { Text(I18N.text(it.third)) },
                             alwaysShowLabel = false
                         )
                     }
@@ -106,16 +108,16 @@ object MainScreen {
                         when (screen.id) {
                             "home" -> {
                                 HomeScreen.HomeScreen()
-                                title.value = I18N.text(R.string.title_home)
+                                title.value = R.string.title_home
                             }
                             "efmod" -> {
                                 EFModScreen.EFModScreen()
-                                title.value = I18N.text(R.string.title_manager_mod)
+                                title.value = R.string.title_manager_mod
                             }
                             "loader" -> {
 
                                 LoaderScreen.LoaderScreen()
-                                title.value = I18N.text(R.string.title_manager_loader)
+                                title.value = R.string.title_manager_loader
                             }
                             else -> UnknownScreen(screen)
                         }

@@ -1,5 +1,6 @@
 package eternal.future.tefmodloader.utils
 
+import android.content.Context
 import android.content.pm.PackageManager
 import androidx.core.net.toUri
 import com.android.apksig.ApkSigner
@@ -8,7 +9,6 @@ import com.android.apksig.KeyConfig.Jca
 import com.android.tools.build.apkzlib.zip.AlignmentRules
 import com.android.tools.build.apkzlib.zip.ZFile
 import com.android.tools.build.apkzlib.zip.ZFileOptions
-import eternal.future.tefmodloader.MainApplication
 import mt.modder.hub.axml.AXMLCompiler
 import mt.modder.hub.axml.AXMLPrinter
 import org.bouncycastle.jce.provider.BouncyCastleProvider
@@ -36,6 +36,12 @@ object Apk {
     private var Mode = 0
     private var Debug = false
     private var OverrideVersion = false
+
+    private lateinit var appContext: Context
+
+    fun init(context: Context) {
+        appContext = context
+    }
 
     private val Z_FILE_OPTIONS: ZFileOptions? = ZFileOptions().setAlignmentRule(
         AlignmentRules.compose(
@@ -71,7 +77,7 @@ object Apk {
 
         srcApkFile.copyTo(tempFile, true)
 
-        val json = parseJsonFromStream(javaClass.classLoader.getResourceAsStream("patch/config.json")!!)
+        val json = parseJsonFromStream(appContext.assets.open("patch/config.json"))
         val json_input = modifyJsonAndReturnStream(json) {
             it.put("mode", Mode)
             it.put("bypass", Bypass)
@@ -117,7 +123,7 @@ object Apk {
     }
 
     private fun getZipEntryStream(entry: String): InputStream? {
-        val fileInput = javaClass.classLoader.getResourceAsStream("patch/Bypass.zip") ?: return null
+        val fileInput = appContext.assets.open("patch/Bypass.zip")
         val zipInput = ZipInputStream(fileInput)
         return generateSequence { zipInput.nextEntry }
             .firstOrNull { it.name == entry }
@@ -294,7 +300,7 @@ object Apk {
         val keyStore = KeyStore.getInstance("BKS", BouncyCastleProvider.PROVIDER_NAME)
 
         keyStore.load(
-            javaClass.classLoader.getResourceAsStream("patch/TEFModLoader.bks"),
+            appContext.assets.open("patch/TEFModLoader.bks"),
             keystorePassword.toCharArray()
         )
 
@@ -324,7 +330,7 @@ object Apk {
 
     fun extractWithPackageName(packageName: String, targetPath: String) {
         try {
-            val pm = MainApplication.getContext().packageManager
+            val pm = appContext.packageManager
             val packageInfo = pm.getPackageInfo(packageName, PackageManager.GET_META_DATA)
 
             packageInfo.applicationInfo?.sourceDir?.let { sourceDir ->
@@ -344,7 +350,7 @@ object Apk {
 
     fun copyApk(apkPath: String, targetPath: String) {
         val url = apkPath.toUri()
-        MainApplication.getContext().contentResolver.openInputStream(url)?.use { inputStream ->
+        appContext.contentResolver.openInputStream(url)?.use { inputStream ->
             FileOutputStream(targetPath).use { outputStream ->
                 inputStream.copyTo(outputStream)
             }
@@ -353,7 +359,7 @@ object Apk {
 
 
     fun doesAnyAppContainMetadata(metadataKey: String): Boolean {
-        val packageManager = MainApplication.getContext().packageManager
+        val packageManager = appContext.packageManager
         val packages = packageManager.getInstalledApplications(PackageManager.GET_META_DATA)
 
         for (packageInfo in packages) {
@@ -369,7 +375,7 @@ object Apk {
     }
 
     fun getPackageNamesWithMetadata(metadataKey: String): Map<String, Int> {
-        val context = MainApplication.getContext()
+        val context = appContext
         val packageManager = context.packageManager
         val packages = packageManager.getInstalledApplications(PackageManager.GET_META_DATA)
 
@@ -388,7 +394,7 @@ object Apk {
 
     fun launchAppByPackageName(packageName: String): Boolean {
         return try {
-            val context = MainApplication.getContext()
+            val context = appContext
             val launchIntent = context.packageManager.getLaunchIntentForPackage(packageName)
             if (launchIntent != null) {
                 context.startActivity(launchIntent)
@@ -404,7 +410,7 @@ object Apk {
 
     fun getSupportedAbi(packageName: String): String? {
         return try {
-            val appInfo = MainApplication.getContext().packageManager
+            val appInfo = appContext.packageManager
                 .getApplicationInfo(packageName, 0)
             val apkPath = appInfo.sourceDir
 
@@ -437,7 +443,7 @@ object Apk {
         outputPath: String
     ) {
 
-        File(outputPath).writeBytes(AXMLCompiler().axml2Xml(MainApplication.getContext(), File(inputPath).readText()))
+        File(outputPath).writeBytes(AXMLCompiler().axml2Xml(appContext, File(inputPath).readText()))
     }
 
     fun decodeAXml(

@@ -10,38 +10,6 @@ import java.io.IOException
 
 object FileUtils {
 
-    fun openFolderPicker(): String? {
-        EFLog.d("打开文件夹选择器")
-        val fileChooser = JFileChooser()
-        fileChooser.fileSelectionMode = JFileChooser.DIRECTORIES_ONLY
-        val returnValue = fileChooser.showOpenDialog(null)
-
-        return if (returnValue == JFileChooser.APPROVE_OPTION) {
-            val selectedPath = fileChooser.selectedFile.absolutePath
-            EFLog.i("用户选择了文件夹: $selectedPath")
-            selectedPath
-        } else {
-            EFLog.w("用户取消了文件夹选择")
-            null
-        }
-    }
-
-    fun openFilePicker(): String? {
-        EFLog.d("打开文件选择器")
-        val fileChooser = JFileChooser()
-        fileChooser.fileSelectionMode = JFileChooser.FILES_ONLY
-        val returnValue = fileChooser.showOpenDialog(null)
-
-        return if (returnValue == JFileChooser.APPROVE_OPTION) {
-            val selectedPath = fileChooser.selectedFile.absolutePath
-            EFLog.i("用户选择了文件: $selectedPath")
-            selectedPath
-        } else {
-            EFLog.w("用户取消了文件选择")
-            null
-        }
-    }
-
     fun deleteDirectory(dir: File) {
         EFLog.d("开始删除目录: ${dir.absolutePath}")
         if (dir.isDirectory) {

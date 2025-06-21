@@ -40,9 +40,8 @@ import eternal.future.tefmodloader.activity.main.screen.about.AboutScreen
 import eternal.future.tefmodloader.activity.main.screen.about.LicenseScreen
 import eternal.future.tefmodloader.activity.main.screen.about.ThanksScreen
 import eternal.future.tefmodloader.activity.main.screen.main.MainScreen
-import eternal.future.tefmodloader.activity.main.screen.welcome.GuideScreen
 import eternal.future.tefmodloader.config.AppConf
-import eternal.future.tefmodloader.config.AppPrefs
+import eternal.future.tefmodloader.config.AppPrefsOld
 import eternal.future.tefmodloader.config.AppState
 import eternal.future.tefmodloader.manager.ThemeManager.ComposeTheme
 import eternal.future.tefmodloader.utils.EFMod
@@ -73,6 +72,11 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (AppPrefsOld.isFirstLaunch) {
+            startActivity(Intent(this, GuideActivity::class.java))
+            finishAffinity()
+            return
+        }
 
         checkPermission()
         instance = this
@@ -110,7 +114,7 @@ class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     @Composable
     fun NavigationHost(viewModel: NavigationViewModel) {
-        ComposeTheme(darkMode = AppPrefs.darkMode, themeId = AppPrefs.theme) {
+        ComposeTheme(darkMode = AppPrefsOld.darkMode, themeId = AppPrefsOld.theme) {
             val currentScreenWithAnimation by viewModel.currentScreen.collectAsState()
             val content = @Composable {
                 Scaffold {
@@ -123,7 +127,6 @@ class MainActivity : ComponentActivity() {
                                 isBottomScreen = false
                                 when (screen.id) {
                                     "welcome" -> WelcomeScreen(viewModel)
-                                    "guide" -> GuideScreen.GuideScreen(viewModel)
                                     "main" -> {
                                         isBottomScreen = true
                                         MainScreen.MainScreen(viewModel)
@@ -164,27 +167,25 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun WelcomeScreen(viewModel: NavigationViewModel) {
-        val isFirst = AppPrefs.isFirstLaunch
+        val isFirst = AppPrefsOld.isFirstLaunch
 
         LaunchedEffect(Unit) {
-            if (AppPrefs.isExternalMode) {
+            if (AppPrefsOld.isExternalMode) {
                 EFMod.update_data(
                     File(Environment.getExternalStorageDirectory(), "Documents/TEFModLoader/Data").path,
                     AppConf.PATH_EFMOD
                 )
-                AppPrefs.isExternalMode = false
+                AppPrefsOld.isExternalMode = false
             }
         }
 
         viewModel.removeCurrentScreen()
-        if (isFirst) viewModel.setInitialScreen("guide")
-        else viewModel.setInitialScreen("main")
+        viewModel.setInitialScreen("main")
     }
 
     fun initializeScreens(viewModel: NavigationViewModel) {
         listOf(
             DefaultScreen("welcome"),
-            DefaultScreen("guide"),
             DefaultScreen("main"),
             DefaultScreen("about"),
             DefaultScreen("help"),

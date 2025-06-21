@@ -16,7 +16,7 @@ object SettingScreen {
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     fun Selector(
-        title: CharSequence,
+        title: String,
         defaultSelectorId: Int,
         selectorList: List<String>,
         modifier: Modifier,
@@ -35,7 +35,7 @@ object SettingScreen {
                 readOnly = true,
                 value = selectorList[selectedId],
                 onValueChange = {},
-                label = { title },
+                label = { Text(title) },
                 trailingIcon = {
                     Icon(
                         imageVector = if (expanded) Icons.Default.ExpandLess else Icons.Default.ExpandMore,
@@ -51,7 +51,7 @@ object SettingScreen {
             ) {
                 selectorList.forEachIndexed { index, id ->
                     DropdownMenuItem(
-                        text = { id },
+                        text = { Text(id) },
                         onClick = {
                             onClick(index)
                             selectedId = index
@@ -66,7 +66,7 @@ object SettingScreen {
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     fun SelectorWithIcon(
-        title: CharSequence,
+        title: String,
         defaultSelectorId: Int = 0,
         selectorList: List<Pair<String, ImageVector>>,
         modifier: Modifier,
@@ -87,7 +87,7 @@ object SettingScreen {
                 readOnly = true,
                 value = selectorList[selectedId].first,
                 onValueChange = {},
-                label = { title },
+                label = { Text(title) },
                 trailingIcon = {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Icon(

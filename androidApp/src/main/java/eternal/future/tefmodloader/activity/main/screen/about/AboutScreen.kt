@@ -86,7 +86,7 @@ fun AboutScreen(mainViewModel: NavigationViewModel) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(10.dp),
-                    labelText = I18N.string(R.string.about_slogan),
+                    labelText = I18N.text(R.string.about_slogan),
                     onClick = {
                         physical = true
                         n++
@@ -120,10 +120,10 @@ fun AboutScreen(mainViewModel: NavigationViewModel) {
 
                 if (userDialog) {
                    UserAgreementDialog(
-                        title = I18N.string(R.string.agreement_user_title),
-                        content = I18N.string(R.string.agreement_user_desc),
+                        title = I18N.text(R.string.agreement_user_title),
+                        content = I18N.text(R.string.agreement_user_desc),
                         onDismiss = { userDialog = false },
-                        confirmButtonText = I18N.string(R.string.close),
+                        confirmButtonText = I18N.text(R.string.close),
                         modifier = Modifier
                             .padding(10.dp)
                             .fillMaxWidth()
@@ -132,10 +132,10 @@ fun AboutScreen(mainViewModel: NavigationViewModel) {
 
                 if (loaderDialog) {
                     UserAgreementDialog(
-                        title = I18N.string(R.string.agreement_loader_title),
-                        content = I18N.string(R.string.agreement_loader_desc),
+                        title = I18N.text(R.string.agreement_loader_title),
+                        content = I18N.text(R.string.agreement_loader_desc),
                         onDismiss = { loaderDialog = false },
-                        confirmButtonText = I18N.string(R.string.close),
+                        confirmButtonText = I18N.text(R.string.close),
                         modifier = Modifier
                             .padding(10.dp)
                             .fillMaxWidth()
@@ -155,7 +155,7 @@ fun AboutScreen(mainViewModel: NavigationViewModel) {
                 aboutWidgets(
                     modifier = Modifier.fillMaxWidth(),
                     icon = Icons.Default.Info,
-                    title = I18N.string(R.string.version),
+                    title = I18N.text(R.string.version),
                     contentDescription = versionName,
                     onClick = {
                         version_n++
@@ -171,7 +171,7 @@ fun AboutScreen(mainViewModel: NavigationViewModel) {
                 aboutWidgets(
                     modifier = Modifier.fillMaxWidth(),
                     icon = Icons.Default.Info,
-                    title = I18N.string(R.string.agreement_user_consent),
+                    title = I18N.text(R.string.agreement_user_title),
                     contentDescription = "",
                     onClick = {
                         userDialog = true
@@ -181,7 +181,7 @@ fun AboutScreen(mainViewModel: NavigationViewModel) {
                 aboutWidgets(
                     modifier = Modifier.fillMaxWidth(),
                     icon = Icons.Default.Info,
-                    title = I18N.string(R.string.agreement_loader_consent),
+                    title = I18N.text(R.string.agreement_loader_title),
                     contentDescription = "",
                     onClick = {
                         loaderDialog = true
@@ -191,8 +191,8 @@ fun AboutScreen(mainViewModel: NavigationViewModel) {
                 aboutWidgets(
                     modifier = Modifier.fillMaxWidth(),
                     icon = Icons.Default.AccountBalance,
-                    title = I18N.string(R.string.about_repo_title),
-                    contentDescription = I18N.string(R.string.about_repo_desc),
+                    title = I18N.text(R.string.about_repo_title),
+                    contentDescription = I18N.text(R.string.about_repo_desc),
                     onClick = {
                         openUrlInBrowser("https://github.com/2079541547/TEFModLoader")
                     }
@@ -211,13 +211,13 @@ fun AboutScreen(mainViewModel: NavigationViewModel) {
 
             contributorList.forEach {
                 item {
-                    Text(I18N.string(it.first), modifier = Modifier.padding(10.dp))
+                    Text(I18N.text(it.first), modifier = Modifier.padding(10.dp))
                     it.second.forEach {
                         expandableWidget(
                             modifier = Modifier.fillMaxWidth(),
                             icon = painterResource(it.first.first),
                             title = it.first.second,
-                            detailedInfo = I18N.string(it.second),
+                            detailedInfo = I18N.text(it.second),
                             onClick = {},
                             isCircularIcon = true
                         )
@@ -227,13 +227,13 @@ fun AboutScreen(mainViewModel: NavigationViewModel) {
 
 
             item {
-                Text(I18N.string(R.string.more), modifier = Modifier.padding(10.dp))
+                Text(I18N.text(R.string.more), modifier = Modifier.padding(10.dp))
 
                 aboutWidgets(
                     modifier = Modifier.fillMaxWidth(),
                     icon = Icons.Default.FavoriteBorder,
-                    title = I18N.string(R.string.about_donate_title),
-                    contentDescription = I18N.string(R.string.about_donate_desc),
+                    title = I18N.text(R.string.about_donate_title),
+                    contentDescription = I18N.text(R.string.about_donate_desc),
                     onClick = {
                         openUrlInBrowser("https://gitlab.com/2079541547/tefmodloader/-/blob/main/Document/donation.md")
                     }
@@ -242,24 +242,24 @@ fun AboutScreen(mainViewModel: NavigationViewModel) {
                 aboutWidgets(
                     modifier = Modifier.fillMaxWidth(),
                     icon = Icons.Default.ThumbUp,
-                    title = I18N.string(R.string.about_thanks_title),
-                    contentDescription = I18N.string(R.string.about_thanks_desc),
+                    title = I18N.text(R.string.about_thanks_title),
+                    contentDescription = I18N.text(R.string.about_thanks_desc),
                     onClick = { mainViewModel.navigateTo("thanks") }
                 )
 
                 aboutWidgets(
                     modifier = Modifier.fillMaxWidth(),
                     icon = Icons.Default.Info,
-                    title = I18N.string(R.string.about_license_title),
-                    contentDescription = I18N.string(R.string.about_license_desc),
+                    title = I18N.text(R.string.about_license_title),
+                    contentDescription = I18N.text(R.string.about_license_desc),
                     onClick = { mainViewModel.navigateTo("license") }
                 )
 
                 aboutWidgets(
                     modifier = Modifier.fillMaxWidth(),
                     icon = Icons.Default.BugReport,
-                    title = I18N.string(R.string.about_feedback_title),
-                    contentDescription = I18N.string(R.string.about_feedback_desc),
+                    title = I18N.text(R.string.about_feedback_title),
+                    contentDescription = I18N.text(R.string.about_feedback_desc),
                     onClick = { openUrlInBrowser("https://gitlab.com/2079541547/tefmodloader/-/issues/new") }
                 )
             }
